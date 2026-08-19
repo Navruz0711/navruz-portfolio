@@ -1,0 +1,216 @@
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import {
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogTrigger,
+} from "../ui/responsive-dialog";
+import { FloatingDock } from "../ui/floating-dock";
+import { ScrollArea } from "../ui/scroll-area";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
+
+import projects, { Project } from "@/data/projects";
+import { SectionHeader } from "./section-header";
+import SectionWrapper from "../ui/section-wrapper";
+import { useLanguage } from "@/context/language-context";
+
+const ProjectPreviewImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="relative w-full h-full bg-muted/20 overflow-hidden">
+      {!hasError ? (
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+          onError={() => setHasError(true)}
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-4">
+          <span className="text-xs text-muted-foreground font-mono">{alt}</span>
+        </div>
+      )}
+      {/* Dark gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+    </div>
+  );
+};
+
+const ProjectsSection = () => {
+  const { t } = useLanguage();
+  return (
+    <SectionWrapper id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] px-4">
+      <SectionHeader
+        id="projects"
+        title={t.projects.title}
+        desc={t.projects.subtitle}
+      />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </SectionWrapper>
+  );
+};
+
+const ProjectCard = ({ project }: { project: Project }) => {
+  const { t } = useLanguage();
+  const projectTrans = t.projects.items?.[project.id];
+  const category = projectTrans?.category || project.category;
+  const headline = projectTrans?.headline;
+  const description = projectTrans?.description;
+  const highlights = projectTrans?.highlights;
+
+  return (
+    <div className="flex items-center justify-center w-full">
+      <ResponsiveDialog>
+        <ResponsiveDialogTrigger className="bg-transparent flex justify-center w-full group text-left">
+          <div
+            className="relative w-full rounded-xl overflow-hidden border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
+            style={{ aspectRatio: "16/10" }}
+          >
+            {/* Static Hero Screenshot */}
+            <ProjectPreviewImage src={project.src} alt={project.title} />
+
+            {/* Bottom info */}
+            <div className="absolute inset-x-0 bottom-0 p-4 flex flex-col items-start justify-end z-10">
+              <div className="text-base md:text-lg font-semibold text-white tracking-tight group-hover:text-primary transition-colors drop-shadow-md">
+                {project.title}
+              </div>
+              <div className="mt-1 text-[11px] font-medium bg-white/10 text-white border border-white/20 rounded-md px-2 py-0.5 backdrop-blur-md">
+                {category}
+              </div>
+            </div>
+          </div>
+        </ResponsiveDialogTrigger>
+
+        <ResponsiveDialogContent className="md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
+          {/* Sticky header */}
+          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-4 sm:px-8 py-4 sm:py-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-wrap">
+                <h4 className="font-display text-lg sm:text-2xl font-bold text-foreground tracking-tight truncate">
+                  {project.title}
+                </h4>
+                <span className="shrink-0 text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-2.5 sm:px-3 py-0.5">
+                  {category}
+                </span>
+              </div>
+              <div className="shrink-0 flex items-center gap-3 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                {project.github && project.github !== "#" && (
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+                  >
+                    {t.projects.source}
+                  </Link>
+                )}
+                {project.live && project.live !== "#" && (
+                  <Link href={project.live} target="_blank">
+                    <button className="group flex items-center gap-1.5 sm:gap-2 bg-primary text-primary-foreground text-xs sm:text-sm font-medium px-3.5 sm:px-4 py-1.5 rounded-full hover:bg-primary/80 transition-colors">
+                      {t.projects.visit}
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </button>
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Scrollable content */}
+          <ScrollArea className="flex-1" type="always" data-lenis-prevent>
+            <div className="px-4 sm:px-8 py-5 sm:py-8 space-y-6 sm:space-y-8">
+              {/* Modal hero banner */}
+              <div className="relative w-full aspect-[16/9] max-h-[340px] rounded-xl overflow-hidden border border-border/60 shadow-md">
+                <Image
+                  src={project.src}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 800px"
+                  className="object-cover object-top"
+                />
+              </div>
+
+              {/* Tech stack */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="flex flex-col md:flex-row gap-6 md:gap-10"
+              >
+                {project.skills.frontend?.length > 0 && (
+                  <div className="flex flex-col items-center md:items-start gap-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+                      {t.projects.frontendStack}
+                    </span>
+                    <FloatingDock items={project.skills.frontend} />
+                  </div>
+                )}
+                {project.skills.backend?.length > 0 && (
+                  <div className="flex flex-col items-center md:items-start gap-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+                      {t.projects.backendStack}
+                    </span>
+                    <FloatingDock items={project.skills.backend} />
+                  </div>
+                )}
+              </motion.div>
+
+              {/* Divider */}
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+              {/* Project content */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {projectTrans ? (
+                  <div className="space-y-6">
+                    {headline && (
+                      <p className="font-mono text-xl md:text-2xl text-foreground text-center font-medium">
+                        {headline}
+                      </p>
+                    )}
+                    {description && (
+                      <p className="font-mono text-muted-foreground leading-relaxed">
+                        {description}
+                      </p>
+                    )}
+                    {highlights && highlights.length > 0 && (
+                      <div>
+                        <h3 className="my-3 mt-6 text-foreground font-semibold text-lg font-display">
+                          {t.projects.highlights}
+                        </h3>
+                        <ul className="space-y-2 font-mono text-sm text-muted-foreground">
+                          {highlights.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="text-primary select-none font-bold">•</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  project.content
+                )}
+              </motion.div>
+            </div>
+          </ScrollArea>
+        </ResponsiveDialogContent>
+      </ResponsiveDialog>
+    </div>
+  );
+};
+
+export default ProjectsSection;
