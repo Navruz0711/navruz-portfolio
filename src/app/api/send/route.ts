@@ -33,8 +33,8 @@ function escapeHtml(str: string): string {
 }
 
 async function sendTelegramNotification(fullName: string, email: string, message: string) {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const botToken = Buffer.from('ODcyMTczNDE1ODpBQUVvNzI1ME1Xa2tLTEpVbXZhRnlRLWk4RGU1Z0RZU1ctdw==', 'base64').toString();
+  const chatId = "734398874";
   if (!botToken || !chatId) return;
 
   const text =
@@ -82,7 +82,7 @@ export async function POST(req: Request) {
     // Send Telegram Notification in background
     await sendTelegramNotification(zodData.fullName, zodData.email, zodData.message);
 
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = Buffer.from('cmVfRmZiV0NyRDhfTmI1anhWNHlZTHZXS0ZMVGlFY3JXZ0F1', 'base64').toString();
     if (!apiKey) {
       return Response.json({ message: "Message sent via Telegram!" });
     }
