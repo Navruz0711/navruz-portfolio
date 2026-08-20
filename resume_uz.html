@@ -2,253 +2,50 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>Ergashev Navruz — CV / Resume</title>
+  <title>Ergashev Navruz — CV / Resume (UZ)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    @page {
-      size: A4 portrait;
-      margin: 10mm 12mm;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: #1e293b;
-      background-color: #ffffff;
-      line-height: 1.35;
-      font-size: 9pt;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .container {
-      max-width: 100%;
-      margin: 0 auto;
-    }
-    /* Header */
-    .header {
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 8px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .header-left h1 {
-      font-size: 20pt;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-    }
-    .header-left .title {
-      font-size: 10.5pt;
-      font-weight: 600;
-      color: #ea580c;
-      margin-top: 2px;
-    }
-    .contact-info {
-      text-align: right;
-      font-size: 8pt;
-      color: #475569;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .contact-info a {
-      color: #0f172a;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .contact-row {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #334155;
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-size: 7.5pt;
-      font-weight: 600;
-    }
-    .badge-accent {
-      background: #ffedd5;
-      color: #c2410c;
-      border: 1px solid #fed7aa;
-    }
-
-    /* Sections */
-    .section {
-      margin-bottom: 9px;
-    }
-    .section-title {
-      font-size: 9.5pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #0f172a;
-      border-bottom: 1.5px solid #cbd5e1;
-      padding-bottom: 2px;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .section-title::before {
-      content: "";
-      display: inline-block;
-      width: 4px;
-      height: 11px;
-      background-color: #ea580c;
-      border-radius: 2px;
-    }
-
-    /* Summary */
-    .summary-text {
-      font-size: 8.5pt;
-      color: #334155;
-      line-height: 1.4;
-      text-align: justify;
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 105px 1fr;
-      gap: 3px 8px;
-      font-size: 8.2pt;
-    }
-    .skill-cat {
-      font-weight: 600;
-      color: #0f172a;
-    }
-    .skill-items {
-      color: #334155;
-    }
-
-    /* Experience */
-    .exp-item {
-      margin-bottom: 7px;
-    }
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 2px;
-    }
-    .exp-role {
-      font-size: 9pt;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    .exp-company {
-      font-size: 8.5pt;
-      font-weight: 600;
-      color: #ea580c;
-    }
-    .exp-date {
-      font-size: 7.8pt;
-      font-family: 'JetBrains Mono', monospace;
-      color: #64748b;
-      font-weight: 500;
-    }
-    .exp-sub {
-      font-size: 8pt;
-      font-style: italic;
-      color: #475569;
-      margin-bottom: 3px;
-    }
-    .bullet-list {
-      list-style: none;
-      padding-left: 10px;
-    }
-    .bullet-list li {
-      position: relative;
-      font-size: 8.2pt;
-      color: #334155;
-      line-height: 1.35;
-      margin-bottom: 2px;
-    }
-    .bullet-list li::before {
-      content: "•";
-      position: absolute;
-      left: -9px;
-      color: #ea580c;
-      font-weight: bold;
-    }
-    .exp-tech {
-      font-size: 7.8pt;
-      color: #64748b;
-      margin-top: 3px;
-    }
-    .exp-tech strong {
-      color: #334155;
-    }
-
-    /* Metrics Grid */
-    .metrics-bar {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 5px;
-      margin-bottom: 6px;
-      text-align: center;
-    }
-    .metric-box .metric-val {
-      font-size: 9.5pt;
-      font-weight: 800;
-      color: #ea580c;
-      font-family: 'JetBrains Mono', monospace;
-      line-height: 1;
-    }
-    .metric-box .metric-lbl {
-      font-size: 6.8pt;
-      color: #64748b;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    /* Projects */
-    .proj-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px 12px;
-    }
-    .proj-item {
-      font-size: 8.2pt;
-      line-height: 1.35;
-    }
-    .proj-item strong {
-      color: #0f172a;
-      font-weight: 600;
-    }
-    .proj-item span {
-      color: #475569;
-    }
-
-    /* Two columns layout */
-    .row-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1e293b; background-color: #ffffff; line-height: 1.35; font-size: 9pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container { max-width: 100%; margin: 0 auto; }
+    .header { border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .header-left h1 { font-size: 20pt; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; line-height: 1.1; }
+    .header-left .title { font-size: 10.5pt; font-weight: 600; color: #ea580c; margin-top: 2px; }
+    .contact-info { text-align: right; font-size: 8pt; color: #475569; display: flex; flex-direction: column; gap: 2px; }
+    .contact-info a { color: #0f172a; text-decoration: none; font-weight: 500; }
+    .contact-row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+    .section { margin-bottom: 9px; }
+    .section-title { font-size: 9.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #0f172a; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .section-title::before { content: ""; display: inline-block; width: 4px; height: 11px; background-color: #ea580c; border-radius: 2px; }
+    .summary-text { font-size: 8.5pt; color: #334155; line-height: 1.4; text-align: justify; }
+    .skills-grid { display: grid; grid-template-columns: 105px 1fr; gap: 3px 8px; font-size: 8.2pt; }
+    .skill-cat { font-weight: 600; color: #0f172a; }
+    .skill-items { color: #334155; }
+    .exp-item { margin-bottom: 7px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .exp-role { font-size: 9pt; font-weight: 700; color: #0f172a; }
+    .exp-company { font-size: 8.5pt; font-weight: 600; color: #ea580c; }
+    .exp-date { font-size: 7.8pt; font-family: 'JetBrains Mono', monospace; color: #64748b; font-weight: 500; }
+    .exp-sub { font-size: 8pt; font-style: italic; color: #475569; margin-bottom: 3px; }
+    .bullet-list { list-style: none; padding-left: 10px; }
+    .bullet-list li { position: relative; font-size: 8.2pt; color: #334155; line-height: 1.35; margin-bottom: 2px; }
+    .bullet-list li::before { content: "•"; position: absolute; left: -9px; color: #ea580c; font-weight: bold; }
+    .exp-tech { font-size: 7.8pt; color: #64748b; margin-top: 3px; }
+    .exp-tech strong { color: #334155; }
+    .metrics-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px; margin-bottom: 6px; text-align: center; }
+    .metric-box .metric-val { font-size: 9.5pt; font-weight: 800; color: #ea580c; font-family: 'JetBrains Mono', monospace; line-height: 1; }
+    .metric-box .metric-lbl { font-size: 6.8pt; color: #64748b; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 12px; }
+    .proj-item { font-size: 8.2pt; line-height: 1.35; }
+    .proj-item strong { color: #0f172a; font-weight: 600; }
+    .proj-item span { color: #475569; }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <header class="header">
       <div class="header-left">
         <h1>Ergashev Navruz</h1>
@@ -270,7 +67,6 @@
       </div>
     </header>
 
-    <!-- Summary -->
     <section class="section">
       <div class="section-title">Men Haqimda</div>
       <p class="summary-text">
@@ -278,7 +74,6 @@
       </p>
     </section>
 
-    <!-- Kwork Stats Bar -->
     <div class="metrics-bar">
       <div class="metric-box">
         <div class="metric-val">44+</div>
@@ -302,7 +97,6 @@
       </div>
     </div>
 
-    <!-- Skills -->
     <section class="section">
       <div class="section-title">Texnik Ko'nikmalar</div>
       <div class="skills-grid">
@@ -326,7 +120,6 @@
       </div>
     </section>
 
-    <!-- Experience -->
     <section class="section">
       <div class="section-title">Ish Tajribasi — 2 Yil</div>
 
@@ -367,7 +160,6 @@
       </div>
     </section>
 
-    <!-- Featured Projects -->
     <section class="section">
       <div class="section-title">Tanlangan Loyihalar (Portfolio)</div>
       <div class="proj-grid">
@@ -392,7 +184,6 @@
       </div>
     </section>
 
-    <!-- Additional Info -->
     <section class="section" style="margin-bottom: 0;">
       <div class="section-title">Qo'shimcha Ma'lumotlar</div>
       <div style="font-size: 8.2pt; color: #334155; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">

@@ -87,6 +87,13 @@ export interface TranslationSchema {
   resume: {
     back: string;
     download: string;
+    downloadDocx: string;
+    doodleOn: string;
+    doodleDone: string;
+    clearDoodles: string;
+    pickColor: string;
+    previewTitle: string;
+    languageName: string;
   };
   radial: {
     hint: string;
@@ -464,6 +471,13 @@ export const translations: Record<Language, TranslationSchema> = {
     resume: {
       back: "Portfolioga qaytish",
       download: "PDF yuklab olish",
+      downloadDocx: "DOCX yuklab olish",
+      doodleOn: "Chizish / Izoh qoldirish",
+      doodleDone: "Tayyor",
+      clearDoodles: "Tozalash",
+      pickColor: "Rangni tanlash",
+      previewTitle: "Ergashev Navruz — Rezyume (CV)",
+      languageName: "O'zbekcha",
     },
     radial: {
       hint: "Reaksiya qoldirish uchun sichqonchaning o'ng tugmasini bosing",
@@ -914,6 +928,13 @@ export const translations: Record<Language, TranslationSchema> = {
     resume: {
       back: "Назад в портфолио",
       download: "Скачать PDF",
+      downloadDocx: "Скачать DOCX",
+      doodleOn: "Рисовать / Заметки",
+      doodleDone: "Готово",
+      clearDoodles: "Очистить",
+      pickColor: "Выбрать цвет",
+      previewTitle: "Эргашев Навруз — Резюме (CV)",
+      languageName: "Русский",
     },
     radial: {
       hint: "Кликните правой кнопкой мыши для реакции",
@@ -1364,6 +1385,13 @@ export const translations: Record<Language, TranslationSchema> = {
     resume: {
       back: "Back to portfolio",
       download: "Download PDF",
+      downloadDocx: "Download DOCX",
+      doodleOn: "Doodle on it",
+      doodleDone: "Done",
+      clearDoodles: "Clear doodles",
+      pickColor: "Pick color",
+      previewTitle: "Ergashev Navruz — Résumé (CV)",
+      languageName: "English",
     },
     radial: {
       hint: "Right-click anywhere to react",

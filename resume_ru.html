@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Эргашев Навруз — Резюме / CV (RU)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1e293b; background-color: #ffffff; line-height: 1.35; font-size: 9pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container { max-width: 100%; margin: 0 auto; }
+    .header { border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .header-left h1 { font-size: 20pt; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; line-height: 1.1; }
+    .header-left .title { font-size: 10.5pt; font-weight: 600; color: #ea580c; margin-top: 2px; }
+    .contact-info { text-align: right; font-size: 8pt; color: #475569; display: flex; flex-direction: column; gap: 2px; }
+    .contact-info a { color: #0f172a; text-decoration: none; font-weight: 500; }
+    .contact-row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+    .section { margin-bottom: 9px; }
+    .section-title { font-size: 9.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #0f172a; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .section-title::before { content: ""; display: inline-block; width: 4px; height: 11px; background-color: #ea580c; border-radius: 2px; }
+    .summary-text { font-size: 8.5pt; color: #334155; line-height: 1.4; text-align: justify; }
+    .skills-grid { display: grid; grid-template-columns: 110px 1fr; gap: 3px 8px; font-size: 8.2pt; }
+    .skill-cat { font-weight: 600; color: #0f172a; }
+    .skill-items { color: #334155; }
+    .exp-item { margin-bottom: 7px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .exp-role { font-size: 9pt; font-weight: 700; color: #0f172a; }
+    .exp-company { font-size: 8.5pt; font-weight: 600; color: #ea580c; }
+    .exp-date { font-size: 7.8pt; font-family: 'JetBrains Mono', monospace; color: #64748b; font-weight: 500; }
+    .exp-sub { font-size: 8pt; font-style: italic; color: #475569; margin-bottom: 3px; }
+    .bullet-list { list-style: none; padding-left: 10px; }
+    .bullet-list li { position: relative; font-size: 8.2pt; color: #334155; line-height: 1.35; margin-bottom: 2px; }
+    .bullet-list li::before { content: "•"; position: absolute; left: -9px; color: #ea580c; font-weight: bold; }
+    .exp-tech { font-size: 7.8pt; color: #64748b; margin-top: 3px; }
+    .exp-tech strong { color: #334155; }
+    .metrics-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px; margin-bottom: 6px; text-align: center; }
+    .metric-box .metric-val { font-size: 9.5pt; font-weight: 800; color: #ea580c; font-family: 'JetBrains Mono', monospace; line-height: 1; }
+    .metric-box .metric-lbl { font-size: 6.8pt; color: #64748b; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 12px; }
+    .proj-item { font-size: 8.2pt; line-height: 1.35; }
+    .proj-item strong { color: #0f172a; font-weight: 600; }
+    .proj-item span { color: #475569; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-left">
+        <h1>Эргашев Навруз</h1>
+        <div class="title">Frontend-разработчик &amp; UI Engineer (React / Next.js / TypeScript)</div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <span>📍 Ташкент, Узбекистан</span>
+          <span>📞 <a href="tel:+998881435565">+998 88 143 55 65</a></span>
+        </div>
+        <div class="contact-row">
+          <span>✉️ <a href="mailto:uznav715@gmail.com">uznav715@gmail.com</a></span>
+          <span>🌐 <a href="https://navruz-portfolio.vercel.app" target="_blank">navruz-portfolio.vercel.app</a></span>
+        </div>
+        <div class="contact-row">
+          <span>💼 <a href="https://kwork.ru/user/expertweb" target="_blank">kwork.ru/user/expertweb</a></span>
+          <span>🐙 <a href="https://github.com/Navruz0711" target="_blank">github.com/Navruz0711</a></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-title">О Себе</div>
+      <p class="summary-text">
+        Frontend-разработчик с 2 годами коммерческого опыта. Специализируюсь на <strong>React, Next.js (App Router), TypeScript, Tailwind CSS</strong> и <strong>Three.js (3D WebGL)</strong> для создания высокопроизводительных веб-приложений, e-commerce платформы и интерактивных интерфейсов. Превращаю макеты Figma в чистый, масштабируемый код с точностью пиксель-в-пиксель. Статус <strong>Top Rated</strong> (высший рейтинг) на бирже Kwork.
+      </p>
+    </section>
+
+    <div class="metrics-bar">
+      <div class="metric-box">
+        <div class="metric-val">44+</div>
+        <div class="metric-lbl">Заказов выполнено</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">32</div>
+        <div class="metric-lbl">Отзыва (5.0 ★)</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">98%</div>
+        <div class="metric-lbl">Успешных заказов</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">89%</div>
+        <div class="metric-lbl">Сдано вовремя</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">32%</div>
+        <div class="metric-lbl">Повторных заказов</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-title">Технические Навыки</div>
+      <div class="skills-grid">
+        <div class="skill-cat">Языки:</div>
+        <div class="skill-items">JavaScript (ES6+), TypeScript, HTML5, CSS3, SCSS</div>
+
+        <div class="skill-cat">Фреймворки:</div>
+        <div class="skill-items">React.js, Next.js (SSR, SSG, App Router), Tailwind CSS, Three.js / React Three Fiber</div>
+
+        <div class="skill-cat">Состояние &amp; Анимация:</div>
+        <div class="skill-items">Zustand, Redux Toolkit, Framer Motion / Motion, Canvas, GSAP, WebGL</div>
+
+        <div class="skill-cat">CMS &amp; Бэкенд:</div>
+        <div class="skill-items">WordPress, MODX, REST API, GraphQL, Node.js основы, WebSocket (Socket.io)</div>
+
+        <div class="skill-cat">Инструменты &amp; DevOps:</div>
+        <div class="skill-items">Git, GitHub, Figma, Vercel, Turbopack, npm/pnpm, Postman, Vite, Chrome DevTools</div>
+
+        <div class="skill-cat">Языки общения:</div>
+        <div class="skill-items">Узбекский (родной), Английский (B2 — свободное техническое общение), Русский (B1 — рабочий)</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Опыт Работы — 2 Года</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Frontend-разработчик</span> — <span class="exp-company">Freelance (Платформа Kwork)</span>
+          </div>
+          <span class="exp-date">2024 — Наст. время</span>
+        </div>
+        <div class="exp-sub">Top Rated Freelancer • 44+ коммерческих заказа • 32 отзыва с оценкой 5.0 • 98% показатель качества</div>
+        <ul class="bullet-list">
+          <li>Разработка сложных, современных и адаптивных веб-интерфейсов на HTML5, CSS3, JavaScript, React, Next.js и TypeScript.</li>
+          <li>Верстка макетов любой сложности из Figma и Photoshop со 100% точностью пиксель-в-пиксель и чистой архитектурой кода.</li>
+          <li>98% заказов выполнены с наивысшей оценкой, 89% сданы точно в срок или раньше; 32% заказчиков обращаются повторно.</li>
+        </ul>
+        <div class="exp-tech">
+          <strong>Технологии:</strong> React, Next.js, TypeScript, Tailwind CSS, Framer Motion, JavaScript, Git, Vercel
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Frontend &amp; Web Application разработчик</span> — <span class="exp-company">Коммерческие Проекты</span>
+          </div>
+          <span class="exp-date">2024 — Наст. время</span>
+        </div>
+        <div class="exp-sub">17+ разработанных коммерческих проектов: E-commerce, Корпоративные сайты, Telegram Web App (TWA)</div>
+        <ul class="bullet-list">
+          <li>Разработка с нуля более 17 веб-сайтов, интернет-магазинов, портала медицинского центра, сайтов недвижимости и Telegram Mini App.</li>
+          <li>Оптимизация Core Web Vitals и показателей Lighthouse до 90+, настройка SEO и обеспечение мгновенной загрузки страниц.</li>
+          <li>100% адаптивность под любые устройства (смартфоны, планшеты, десктоп) и интеграция плавных микро-анимаций.</li>
+        </ul>
+        <div class="exp-tech">
+          <strong>Технологии:</strong> Next.js 15/16, React 19, TypeScript, Tailwind CSS, Three.js, Socket.io, REST API
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Избранные Проекты (Портфолио)</div>
+      <div class="proj-grid">
+        <div class="proj-item">
+          <strong>• TechX Store:</strong> <span>Полноценный e-commerce магазин электроники и гаджетов (Next.js, TypeScript, Tailwind CSS).</span>
+        </div>
+        <div class="proj-item">
+          <strong>• Celitel Medical Center:</strong> <span>Многостраничный официальный портал медицинского центра с каталогом услуг.</span>
+        </div>
+        <div class="proj-item">
+          <strong>• Balanov Mini App (TWA):</strong> <span>Интерактивное веб-приложение (Mini App) для экосистемы Telegram.</span>
+        </div>
+        <div class="proj-item">
+          <strong>• Riveria &amp; Konda Dom:</strong> <span>Современные посадочные страницы для компаний в сфере премиум недвижимости и строительства.</span>
+        </div>
+        <div class="proj-item">
+          <strong>• 3D Interactive Portfolio:</strong> <span>Интерактивное 3D портфолио на Three.js / R3F с 60 FPS (navruz-portfolio.vercel.app).</span>
+        </div>
+        <div class="proj-item">
+          <strong>• Baiagent &amp; Costa:</strong> <span>Высококонверсионные интерфейсы для современных SaaS стартапов и сервисов.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="margin-bottom: 0;">
+      <div class="section-title">Дополнительная Информация</div>
+      <div style="font-size: 8.2pt; color: #334155; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+        <span><strong>Занятость:</strong> Полная, частичная, фриланс или проектная работа</span>
+        <span><strong>Формат:</strong> Удаленно (Remote), Офис или Гибрид</span>
+        <span><strong>Локация:</strong> Ташкент / Готов к релокации</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

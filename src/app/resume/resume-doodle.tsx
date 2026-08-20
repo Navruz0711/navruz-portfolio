@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Pencil, Trash2, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/language-context";
 
 const COLORS = [
   "hsl(20,100%,70%)", // accent
@@ -20,6 +21,7 @@ export default function ResumeDoodle({
   src: string;
   title: string;
 }) {
+  const { t } = useLanguage();
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const drawing = useRef(false);
@@ -151,12 +153,12 @@ export default function ResumeDoodle({
                 <motion.button
                   key={c}
                   type="button"
-                  aria-label={`Pick color ${c}`}
+                  aria-label={`${t.resume.pickColor} ${c}`}
                   onClick={() => setColor(c)}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.85 }}
                   className={cn(
-                    "h-5 w-5 rounded-full ring-offset-2 ring-offset-background transition-shadow",
+                    "h-5 w-5 rounded-full ring-offset-2 ring-offset-background transition-shadow cursor-pointer",
                     color === c ? "ring-2 ring-foreground" : "ring-0"
                   )}
                   style={{ backgroundColor: c }}
@@ -165,16 +167,16 @@ export default function ResumeDoodle({
               <div className="mx-1 h-5 w-px bg-border" />
               <motion.button
                 type="button"
-                aria-label="Clear doodles"
+                aria-label={t.resume.clearDoodles}
                 onClick={clear}
                 disabled={!hasDrawing}
                 whileHover={{ scale: hasDrawing ? 1.1 : 1 }}
                 whileTap={{ scale: hasDrawing ? 0.85 : 1 }}
                 className={cn(
-                  "flex h-7 w-7 items-center justify-center rounded-full transition-colors",
+                  "flex h-7 w-7 items-center justify-center rounded-full transition-colors cursor-pointer",
                   hasDrawing
                     ? "text-muted-foreground hover:text-foreground"
-                    : "text-muted-foreground/30"
+                    : "text-muted-foreground/30 pointer-events-none"
                 )}
               >
                 <Trash2 className="h-4 w-4" />
@@ -191,9 +193,9 @@ export default function ResumeDoodle({
           whileTap={{ scale: 0.92 }}
           aria-pressed={active}
           className={cn(
-            "group flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium shadow-lg transition-colors",
+            "group flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium shadow-lg transition-colors cursor-pointer",
             active
-              ? "bg-[hsl(20,100%,70%)] text-black"
+              ? "bg-[hsl(20,100%,70%)] text-black font-semibold"
               : "border border-border/60 bg-background/80 text-foreground backdrop-blur-md hover:border-[hsl(20,100%,70%)]/40"
           )}
         >
@@ -208,7 +210,7 @@ export default function ResumeDoodle({
               <Pencil className="h-4 w-4" />
             )}
           </motion.span>
-          {active ? "Done" : "Doodle on it"}
+          {active ? t.resume.doodleDone : t.resume.doodleOn}
         </motion.button>
       </div>
     </div>
