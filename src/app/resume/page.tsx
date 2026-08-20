@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function ResumePage() {
-  redirect("/resume.pdf");
+  redirect("/Ergashev_Navruz_Resume.pdf");
 }
