@@ -22,6 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${config.site}/news`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${config.site}/resume`,
       changeFrequency: "monthly",
       priority: 0.8,

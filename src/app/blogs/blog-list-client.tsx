@@ -44,26 +44,48 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[hsl(20,100%,70%)]/3 blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-4 pt-32 pb-24 max-w-6xl">
+      <div className="container mx-auto px-4 pt-28 pb-24 max-w-6xl">
+        {/* Top bar navigation */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-between gap-4 mb-12"
+        >
+          <Link
+            href="/"
+            className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
+          >
+            <span className="inline-block mr-1 group-hover:-translate-x-1 transition-transform">←</span>
+            Back to Portfolio
+          </Link>
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[hsl(20,100%,70%)] hover:underline border border-[hsl(20,100%,70%)]/30 rounded-full px-3 py-1 bg-[hsl(20,100%,70%)]/5"
+          >
+            <span>✉</span> Newsletter Dispatch
+          </Link>
+        </motion.div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20"
+          className="mb-16"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px flex-1 max-w-[60px] bg-[hsl(20,100%,70%)]" />
             <span className="text-[hsl(20,100%,70%)] text-sm font-medium tracking-[0.2em] uppercase font-sans">
-              Blog
+              Engineering & Design Blog
             </span>
           </div>
           <h1 className="font-display text-3xl md:text-5xl leading-[0.95] tracking-tight">
-            Thoughts &<br />
-            <span className="text-[hsl(20,100%,70%)]">Dispatches</span>
+            Thoughts, Experiments &<br />
+            <span className="text-[hsl(20,100%,70%)]">Frontend Dispatches</span>
           </h1>
-          <p className="mt-6 text-muted-foreground text-lg max-w-lg leading-relaxed font-sans">
-            Notes on building things, breaking things, and occasionally writing about it.
+          <p className="mt-6 text-muted-foreground text-lg max-w-xl leading-relaxed font-sans">
+            Deep dives into React, Next.js, Three.js 3D web craft, UI micro-interactions, and real-world freelance insights.
           </p>
         </motion.div>
 
@@ -191,6 +213,37 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
             </motion.div>
           ))}
         </div>
+
+        {/* Newsletter Callout Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 relative rounded-2xl border border-[hsl(20,100%,70%)]/20 bg-card/40 backdrop-blur-md p-8 md:p-12 overflow-hidden"
+        >
+          <div className="absolute -right-12 -top-12 w-48 h-48 bg-[hsl(20,100%,70%)]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative">
+            <div className="max-w-xl">
+              <span className="text-[hsl(20,100%,70%)] text-xs font-mono uppercase tracking-widest font-semibold">
+                ✉ Stay in the loop
+              </span>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mt-2 text-foreground tracking-tight">
+                Subscribe to the Frontend Dispatch
+              </h3>
+              <p className="text-muted-foreground text-sm md:text-base mt-2">
+                Get monthly deep-dives on 3D web graphics, UI/UX architecture, and freelancing straight to your inbox.
+              </p>
+            </div>
+            <Link
+              href="/news"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[hsl(20,100%,70%)] text-background font-medium hover:bg-[hsl(20,100%,75%)] transition-colors shadow-lg shadow-[hsl(20,100%,70%)]/10 font-sans"
+            >
+              <span>Explore Newsletter</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </motion.div>
 
         {/* Empty state */}
         {posts.length === 0 && (

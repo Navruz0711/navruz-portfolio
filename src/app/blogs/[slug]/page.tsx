@@ -18,8 +18,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getBlogPost(slug);
+  if (!post) {
+    return {
+      title: "Post Not Found | Navruz Portfolio",
+      description: "Blog post not found",
+    };
+  }
   return {
-    title: `${post.metadata.title} | Portfolio`,
+    title: `${post.metadata.title} | Navruz Portfolio`,
     description: post.metadata.summary,
   };
 }
@@ -60,40 +66,38 @@ const components = {
   ),
   p: (props: any) => (
     <p
-      className="text-muted-foreground leading-[1.8] mb-7 text-[17px] font-sans"
+      className="text-muted-foreground leading-relaxed mb-6 text-base md:text-lg font-sans"
       {...props}
     />
   ),
   ul: (props: any) => (
     <ul
-      className="mb-7 text-muted-foreground space-y-3 text-[17px] leading-[1.8] font-sans"
+      className="list-disc list-outside ml-6 mb-6 space-y-2 text-muted-foreground font-sans"
       {...props}
     />
   ),
   ol: (props: any) => (
     <ol
-      className="list-decimal mb-7 text-muted-foreground space-y-3 text-[17px] leading-[1.8] font-sans pl-5"
+      className="list-decimal list-outside ml-6 mb-6 space-y-2 text-muted-foreground font-sans"
       {...props}
     />
   ),
-  li: (props: any) => (
-    <li className="pl-2 relative before:content-['–'] before:absolute before:-left-5 before:text-[hsl(20,100%,70%)] before:font-medium" {...props} />
-  ),
+  li: (props: any) => <li className="leading-relaxed" {...props} />,
   blockquote: (props: any) => (
     <blockquote
-      className="border-l-2 border-[hsl(20,100%,70%)] pl-6 my-8 text-foreground/80 italic text-lg leading-relaxed font-sans"
+      className="border-l-2 border-[hsl(20,100%,70%)] pl-6 my-8 italic text-foreground/80 font-sans"
       {...props}
     />
   ),
   code: (props: any) => (
     <code
-      className="bg-muted/50 text-[hsl(20,100%,65%)] px-1.5 py-0.5 rounded text-[15px] font-mono"
+      className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-[hsl(20,100%,70%)]"
       {...props}
     />
   ),
   pre: (props: any) => (
     <pre
-      className="bg-[hsl(222,84%,3%)] p-5 rounded-xl overflow-x-auto mb-8 border border-border/50 text-sm leading-relaxed"
+      className="bg-card border border-border/50 rounded-xl p-4 md:p-6 overflow-x-auto my-8 font-mono text-sm leading-relaxed"
       {...props}
     />
   ),
@@ -103,18 +107,18 @@ const components = {
       {...props}
     />
   ),
-  hr: () => (
-    <hr className="my-12 border-none h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-  ),
+  hr: () => <hr className="border-border/50 my-12" />,
   strong: (props: any) => (
     <strong className="text-foreground font-semibold" {...props} />
   ),
 };
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  notFound();
   const { slug } = await params;
   const post = getBlogPost(slug);
+  if (!post) {
+    notFound();
+  }
   const readTime = estimateReadTime(post.content);
 
   return (

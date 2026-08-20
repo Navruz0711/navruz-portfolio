@@ -1,0 +1,67 @@
+---
+title: "Building High-Performance 3D Portfolios with React Three Fiber & Next.js"
+publishedAt: "2024-11-15"
+summary: "A deep dive into 60 FPS 3D canvas rendering, shader optimizations, and modern web aesthetics."
+author: "Ergashev Navruz"
+tags: ["Next.js", "Three.js", "Web3D", "Performance"]
+---
+
+# Building High-Performance 3D Portfolios with React Three Fiber & Next.js
+
+Modern web development has evolved far beyond static text and flat boxes. Today, bringing depth, interactivity, and spatial design into user interfaces is one of the most effective ways to create an unforgettable impression.
+
+In this article, I want to share the practical techniques and architectural patterns I used while developing interactive 3D web experiences using **React Three Fiber (R3F)**, **Three.js**, and **Next.js**.
+
+---
+
+## 1. Why 3D on the Web?
+
+When done right, 3D adds a tactile, exploratory dimension to your portfolio or web application. Instead of passive scrolling, visitors actively interact with objects, manipulate perspective, and engage with your creative vision.
+
+However, the biggest challenge with 3D on the web is **performance**. Without careful optimization, WebGL can quickly drain device battery, spike CPU/GPU usage, and drop framerates.
+
+```typescript
+// Initializing a lightweight R3F canvas setup
+<Canvas
+  gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+  dpr={[1, 1.5]} // Limit pixel ratio to prevent GPU overload on Retina displays
+  camera={{ position: [0, 0, 5], fov: 45 }}
+>
+  <ambientLight intensity={0.7} />
+  <directionalLight position={[10, 10, 5]} intensity={1.2} />
+  <Suspense fallback={null}>
+    <SceneModel />
+  </Suspense>
+</Canvas>
+```
+
+---
+
+## 2. Key Optimization Strategies
+
+### A. Dynamic DPR (Device Pixel Ratio)
+High-DPI screens (like Apple Retina displays with 3x DPR) render up to 9 times more pixels than standard screens. By capping `dpr={[1, 1.5]}` or `[1, 2]`, you preserve crisp visuals while significantly cutting GPU fill-rate demands.
+
+### B. Geometry & Texture Compression
+- Convert 3D models to **GLTF / GLB** format.
+- Use **Draco compression** for geometry to shrink file sizes by up to 80%.
+- Utilize compressed textures (KTX2 / WebP) instead of raw PNGs.
+
+### C. On-Demand Rendering vs Continuous Loop
+If your 3D scene only responds to user interaction (e.g. cursor hover or scroll), avoid running `requestAnimationFrame` continuously at full power when idle. Use `frameloop="demand"` where applicable.
+
+---
+
+## 3. Seamless Integration with Next.js & Tailwind CSS
+
+One common pitfall is treating the 3D canvas as a separate isolated world. The true magic happens when the canvas and HTML/CSS UI overlay blend seamlessly:
+
+- Use `backdrop-blur` and glassmorphic overlays so 3D elements float naturally behind the content.
+- Sync Three.js camera position with page scroll triggers (e.g. GSAP ScrollTrigger or Framer Motion).
+- Lazy-load the heavy 3D canvas with dynamic imports (`next/dynamic` with `ssr: false`) to ensure initial page load and Core Web Vitals remain lightning-fast.
+
+---
+
+## Summary
+
+Building 3D web experiences requires balancing visual ambition with strict performance budgeting. By utilizing texture compression, controlling DPR, and decoupling non-critical calculations, you can deliver breathtaking 60 FPS interactive web worlds that delight your users across all devices. 🚀

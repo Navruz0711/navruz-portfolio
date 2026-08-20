@@ -9,8 +9,6 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  notFound();
-
   const posts = getBlogPosts()
     .sort((a, b) => {
       if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
