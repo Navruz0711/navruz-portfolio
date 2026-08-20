@@ -77,7 +77,7 @@ export default function Particles({
       window.removeEventListener("resize", initCanvas);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [isBlogPost]);
+  }, [isBlogPost, pathname]);
 
   useEffect(() => {
     onMouseMove();
