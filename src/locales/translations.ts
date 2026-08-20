@@ -98,6 +98,74 @@ export interface TranslationSchema {
     privacy: string;
     terms: string;
   };
+  blog: {
+    backToPortfolio: string;
+    newsletterBadge: string;
+    tagline: string;
+    title: string;
+    highlight: string;
+    subtitle: string;
+    featured: string;
+    minRead: string;
+    readArticle: string;
+    noPosts: string;
+    allPosts: string;
+    backToAll: string;
+    publishedOn: string;
+    author: string;
+    newsletterBanner: {
+      badge: string;
+      title: string;
+      description: string;
+      button: string;
+    };
+  };
+  newsletter: {
+    backToPortfolio: string;
+    readBlog: string;
+    badge: string;
+    title: string;
+    highlight: string;
+    subtitle: string;
+    cardTitle: string;
+    cardSubtitle: string;
+    emailPlaceholder: string;
+    subscribeButton: string;
+    submittingButton: string;
+    successTitle: string;
+    successDesc: string;
+    subscribeAnother: string;
+    errorInvalid: string;
+    trustBadges: {
+      noSpam: string;
+      frequency: string;
+      freeSnippets: string;
+    };
+    perks: {
+      badge: string;
+      title: string;
+      items: {
+        title: string;
+        description: string;
+      }[];
+    };
+    archive: {
+      badge: string;
+      title: string;
+      countLabel: string;
+      keyTopics: string;
+      items: {
+        id: string;
+        number: string;
+        title: string;
+        date: string;
+        readTime: string;
+        category: string;
+        summary: string;
+        highlights: string[];
+      }[];
+    };
+  };
 }
 
 export const translations: Record<Language, TranslationSchema> = {
@@ -382,6 +450,132 @@ export const translations: Record<Language, TranslationSchema> = {
       privacy: "Maxfiylik",
       terms: "Qoidalar",
     },
+    blog: {
+      backToPortfolio: "Portfolioga qaytish",
+      newsletterBadge: "Newsletter Yangiliklari",
+      tagline: "Muhandislik & Dizayn Blogi",
+      title: "Fikrlar, Eksperimentlar &",
+      highlight: "Frontend Yangiliklari",
+      subtitle: "React, Next.js, Three.js 3D veb grafikasi, UI mikro-animatsiyalari va real frilans tajribalari haqida maqolalar.",
+      featured: "Asosiy Maqola",
+      minRead: "daqiqalik mutolaa",
+      readArticle: "Maqolani o'qish",
+      noPosts: "Hozircha maqolalar mavjud emas. Tez orada yangilanadi.",
+      allPosts: "Barcha maqolalar",
+      backToAll: "Barcha maqolalarga qaytish",
+      publishedOn: "Chop etilgan sana",
+      author: "Muallif",
+      newsletterBanner: {
+        badge: "✉ Aloqada qoling",
+        title: "Frontend Yangiliklariga Obuna Bo'ling",
+        description: "3D veb grafikasi, UI/UX arxitekturasi va frilans bo'yicha eng sara maqolalarni to'g'ridan-to'g'ri pochtangizda qabul qiling.",
+        button: "Yangiliklarni Ko'rish",
+      },
+    },
+    newsletter: {
+      backToPortfolio: "Portfolioga qaytish",
+      readBlog: "Blogni O'qish",
+      badge: "Dasturchi Dayjesti & Yangiliklar",
+      title: "Bilimlar, Eksperimentlar &",
+      highlight: "Frontend Muhandisligi",
+      subtitle: "Zamonaviy veb arxitektura, interaktiv 3D grafika, silliq UI mikro-animatsiyalar va samarali frilans strategiyalari jamlangan oylik dayjest.",
+      cardTitle: "Dayjestga Qo'shiling",
+      cardSubtitle: "Spamsiz. Faqat yuqori sifatli texnik maqolalar. Istalgan vaqtda obunani bekor qilish mumkin.",
+      emailPlaceholder: "Email manzilingizni kiriting...",
+      subscribeButton: "Bepul Obuna Bo'lish",
+      submittingButton: "Qo'shilmoqda...",
+      successTitle: "Muvaffaqiyatli! Obuna bo'ldingiz 🎉",
+      successDesc: "email manzili bilan ro'yxatdan o'tganingiz uchun rahmat. Keyingi nashr to'g'ridan-to'g'ri pochtangizga yetib boradi!",
+      subscribeAnother: "Boshqa email bilan obuna bo'lish",
+      errorInvalid: "Iltimos, to'g'ri email manzilini kiriting.",
+      trustBadges: {
+        noSpam: "Hech qanday spam yo'q",
+        frequency: "Oyiga 1-2 ta sara nashr",
+        freeSnippets: "Bepul kod namunalari",
+      },
+      perks: {
+        badge: "Nimani kutish mumkin",
+        title: "Har bir sonda nimalarni tahlil qilamiz",
+        items: [
+          {
+            title: "Ilg'or Frontend",
+            description: "Zamonaviy React, Next.js App Router, TypeScript ilg'or qoidalari va tezkor ishlash unumdorligi.",
+          },
+          {
+            title: "3D & Kreativ Veb",
+            description: "Amaliy Three.js shader qo'llanmalari, interaktiv Canvas darslari va silliq harakatli animatsiyalar.",
+          },
+          {
+            title: "Frilans & Ishlab Chiqish",
+            description: "44 dan ortiq tijoriy loyihalar asosidagi real keyslar, mijozlar bilan ishlash va natijaga erishish sirlari.",
+          },
+        ],
+      },
+      archive: {
+        badge: "Arxiv & Mavzular",
+        title: "So'nggi Newsletter Nashrlari",
+        countLabel: "Sara Nashrlar",
+        keyTopics: "Ko'rib chiqilgan asosiy mavzular:",
+        items: [
+          {
+            id: "issue-04",
+            number: "04-Nashr",
+            title: "Vebda 3D grafika sirlari: React Three Fiber real loyihalarda",
+            date: "Noyabr 2024",
+            readTime: "5 daqiqa",
+            category: "3D & WebGL",
+            summary: "3D canvas unumdorligini optimallashtirish, Retina ekranlarda DPR ni boshqarish va WebGL resurslarini yuklash sirlari.",
+            highlights: [
+              "GLTF modellari uchun Draco siqish usullari",
+              "Qurilma FPS ko'rsatkichiga qarab dinamik DPR moslashtirish",
+              "Canvas shaderlarini Tailwind CSS qatlamlari bilan uyg'unlashtirish",
+            ],
+          },
+          {
+            id: "issue-03",
+            number: "03-Nashr",
+            title: "Next.js 15 & React 19: Katta loyihalarga mos arxitektura",
+            date: "Oktyabr 2024",
+            readTime: "4 daqiqa",
+            category: "Arxitektura",
+            summary: "Murakkab loyihalarni Server Components, Server Actions va Turbopack ga o'tkazishda olingan tajribalar.",
+            highlights: [
+              "Mobil qurilmalarda Core Web Vitals ni 99+ ballga yetkazish",
+              "Suspense orqali striming va SSR tiqilinchlarini oldini olish",
+              "Ortiqcha kodlarsiz xavfsiz Server Actions arxitekturasi",
+            ],
+          },
+          {
+            id: "issue-02",
+            number: "02-Nashr",
+            title: "Foydalanuvchini hayratda qoldiruvchi mikro-animatsiyalar yaratish",
+            date: "Sentyabr 2024",
+            readTime: "6 daqiqa",
+            category: "UI / UX Dizayn",
+            summary: "Magnitli tugmalar, elastik prujinali fizika va kursor sezuvchi interaktiv elementlarni silliq yaratish.",
+            highlights: [
+              "JS layout hisob-kitoblariga qarshi apparat tezlatgichli CSS o'zgarishlar",
+              "Framer Motion layoutId orqali tablarni mukammal animatsiya qilish",
+              "Harakatni cheklovchi tizimlar uchun moslashuvchanlik",
+            ],
+          },
+          {
+            id: "issue-01",
+            number: "01-Nashr",
+            title: "Oliy Reytingli Frilanser Qo'llanmasi: 44+ Buyurtma va 98% Natija",
+            date: "Avgust 2024",
+            readTime: "7 daqiqa",
+            category: "Karyera & Frilans",
+            summary: "Mijozlar bilan sifatli ishlash, talablarni to'g'ri baholash va doimiy mijozlar bazasini shakllantirish bo'yicha amaliy qoidalar.",
+            highlights: [
+              "Figma dizaynlarini pikselma-piksel aniqlikda kodga aylantirish",
+              "Mijoz bilan ishonchli va tezkor muloqot tizimi",
+              "89% muddatida topshirish ko'rsatkichini saqlab qolish sirlari",
+            ],
+          },
+        ],
+      },
+    },
   },
   ru: {
     nav: {
@@ -664,6 +858,132 @@ export const translations: Record<Language, TranslationSchema> = {
       privacy: "Конфиденциальность",
       terms: "Условия",
     },
+    blog: {
+      backToPortfolio: "Назад в Портфолио",
+      newsletterBadge: "Выпуски Newsletter",
+      tagline: "Блог о разработке и дизайне",
+      title: "Мысли, Эксперименты и",
+      highlight: "Frontend Заметки",
+      subtitle: "Глубокие разборы React, Next.js, 3D графики Three.js, микро-анимаций UI и реального опыта фриланса.",
+      featured: "Главная Статья",
+      minRead: "мин чтения",
+      readArticle: "Читать статью",
+      noPosts: "Пока нет статей. Скоро здесь появятся новые публикации.",
+      allPosts: "Все публикации",
+      backToAll: "Назад ко всем статьям",
+      publishedOn: "Дата публикации",
+      author: "Автор",
+      newsletterBanner: {
+        badge: "✉ Будьте в курсе",
+        title: "Подпишитесь на Frontend рассылку",
+        description: "Получайте ежемесячные разборы 3D веба, архитектуры UI/UX и фриланса прямо на вашу почту.",
+        button: "Смотреть рассылку",
+      },
+    },
+    newsletter: {
+      backToPortfolio: "Назад в Портфолио",
+      readBlog: "Читать Блог",
+      badge: "Дайджест разработчика и новости",
+      title: "Инсайты, Эксперименты и",
+      highlight: "Frontend Разработка",
+      subtitle: "Курируемый ежемесячный дайджест о современной веб-архитектуре, 3D графике, плавных микро-анимациях и проверенных стратегиях фриланса.",
+      cardTitle: "Присоединяйтесь к рассылке",
+      cardSubtitle: "Никакого спама. Только качественные технические разборы. Отписаться можно в любой момент.",
+      emailPlaceholder: "Введите ваш email адрес...",
+      subscribeButton: "Подписаться бесплатно",
+      submittingButton: "Подключение...",
+      successTitle: "Вы успешно подписались! 🎉",
+      successDesc: "Спасибо за подписку с адресом. Следующий выпуск будет доставлен прямо на вашу почту!",
+      subscribeAnother: "Подписать другой email",
+      errorInvalid: "Пожалуйста, введите корректный email адрес.",
+      trustBadges: {
+        noSpam: "Без спама",
+        frequency: "1-2 выпуска в месяц",
+        freeSnippets: "Бесплатные примеры кода",
+      },
+      perks: {
+        badge: "Что вас ждет",
+        title: "О чем мы рассказываем в каждом выпуске",
+        items: [
+          {
+            title: "Современный Frontend",
+            description: "Глубокие разборы React, Next.js App Router, продвинутые паттерны TypeScript и оптимизация производительности.",
+          },
+          {
+            title: "3D и Креативный Веб",
+            description: "Практические шейдеры Three.js, интерактивные уроки Canvas и дизайн плавных анимаций.",
+          },
+          {
+            title: "Фриланс и Производство",
+            description: "Реальные кейсы из более чем 44 коммерческих проектов, работа с клиентами и секреты высокого рейтинга.",
+          },
+        ],
+      },
+      archive: {
+        badge: "Архив и Темы",
+        title: "Последние Выпуски Рассылки",
+        countLabel: "Выпусков",
+        keyTopics: "Ключевые темы выпуска:",
+        items: [
+          {
+            id: "issue-04",
+            number: "Выпуск #04",
+            title: "Секреты 3D в вебе: Паттерны React Three Fiber в реальных проектах",
+            date: "Ноябрь 2024",
+            readTime: "5 мин",
+            category: "3D & WebGL",
+            summary: "Оптимизация производительности 3D canvas, контроль DPR на Retina экранах и эффективная загрузка моделей.",
+            highlights: [
+              "Пайплайн сжатия моделей GLTF с помощью Draco",
+              "Динамическая адаптация DPR под текущий FPS устройства",
+              "Совмещение шейдеров Canvas с оверлеями Tailwind CSS",
+            ],
+          },
+          {
+            id: "issue-03",
+            number: "Выпуск #03",
+            title: "Next.js 15 и React 19: Масштабируемая архитектура",
+            date: "Октябрь 2024",
+            readTime: "4 мин",
+            category: "Архитектура",
+            summary: "Опыт миграции сложных клиентских приложений на Server Components, Actions и Turbopack.",
+            highlights: [
+              "Оптимизация Core Web Vitals до 99+ баллов на мобильных",
+              "Стриминг через Suspense без задержек первичного рендера",
+              "Типобезопасные Server Actions без лишнего бойлерплейта",
+            ],
+          },
+          {
+            id: "issue-02",
+            number: "Выпуск #02",
+            title: "Создание впечатляющих микро-анимаций без падения FPS",
+            date: "Сентябрь 2024",
+            readTime: "6 мин",
+            category: "UI / UX Дизайн",
+            summary: "Магнитные кнопки, упругая физика пружин и плавные курсорные интерактивные элементы.",
+            highlights: [
+              "Аппаратные CSS трансформации вместо тяжелых JS перерасчетов",
+              "Анимация вкладок с помощью Framer Motion layoutId",
+              "Поддержка режимов prefers-reduced-motion",
+            ],
+          },
+          {
+            id: "issue-01",
+            number: "Выпуск #01",
+            title: "Гайд продавца с высшим рейтингом: 44+ проекта и 98% успеха",
+            date: "Август 2024",
+            readTime: "7 мин",
+            category: "Карьера и Фриланс",
+            summary: "Стратегии работы с заказчиками, четкая оценка ТЗ и секреты поддержания постоянной клиентской базы.",
+            highlights: [
+              "Пиксель-в-пиксель верстка макетов Figma в чистый код",
+              "Проактивные паттерны общения с заказчиками",
+              "Соблюдение сроков для достижения 89% своевременной сдачи",
+            ],
+          },
+        ],
+      },
+    },
   },
   en: {
     nav: {
@@ -945,6 +1265,132 @@ export const translations: Record<Language, TranslationSchema> = {
       newsletter: "Newsletter",
       privacy: "Privacy",
       terms: "Terms",
+    },
+    blog: {
+      backToPortfolio: "Back to Portfolio",
+      newsletterBadge: "Newsletter Dispatch",
+      tagline: "Engineering & Design Blog",
+      title: "Thoughts, Experiments &",
+      highlight: "Frontend Dispatches",
+      subtitle: "Deep dives into React, Next.js, Three.js 3D web craft, UI micro-interactions, and real-world freelance insights.",
+      featured: "Featured Post",
+      minRead: "min read",
+      readArticle: "Read article",
+      noPosts: "No posts yet. Check back soon.",
+      allPosts: "All posts",
+      backToAll: "Back to all posts",
+      publishedOn: "Published on",
+      author: "Author",
+      newsletterBanner: {
+        badge: "✉ Stay in the loop",
+        title: "Subscribe to the Frontend Dispatch",
+        description: "Get monthly deep-dives on 3D web graphics, UI/UX architecture, and freelancing straight to your inbox.",
+        button: "Explore Newsletter",
+      },
+    },
+    newsletter: {
+      backToPortfolio: "Back to Portfolio",
+      readBlog: "Read Blog",
+      badge: "Developer Dispatch & Digest",
+      title: "Insights, Experiments &",
+      highlight: "Frontend Engineering",
+      subtitle: "A curated monthly dispatch covering modern web architecture, interactive 3D graphics, smooth UI micro-animations, and actionable freelance strategies.",
+      cardTitle: "Join the Dispatch",
+      cardSubtitle: "Zero spam. High-signal technical breakdowns only. Unsubscribe anytime.",
+      emailPlaceholder: "Enter your email address...",
+      subscribeButton: "Subscribe Free",
+      submittingButton: "Joining...",
+      successTitle: "You're in! Welcome aboard 🎉",
+      successDesc: "Thank you for subscribing with. You'll receive the next edition straight in your inbox!",
+      subscribeAnother: "Subscribe another email",
+      errorInvalid: "Please enter a valid email address.",
+      trustBadges: {
+        noSpam: "No spam ever",
+        frequency: "1-2 editions/month",
+        freeSnippets: "Free source code snippets",
+      },
+      perks: {
+        badge: "What to Expect",
+        title: "What We Explore Each Issue",
+        items: [
+          {
+            title: "Cutting-Edge Frontend",
+            description: "Deep dives into modern React, Next.js App Router, TypeScript best practices, and performance engineering.",
+          },
+          {
+            title: "3D & Creative Web",
+            description: "Practical Three.js shader guides, interactive canvas tutorials, and motion design recipes.",
+          },
+          {
+            title: "Freelance & Production",
+            description: "Real-world case studies, client delivery insights, and workflows from over 44+ commercial projects.",
+          },
+        ],
+      },
+      archive: {
+        badge: "Archive & Topics",
+        title: "Recent Newsletter Editions",
+        countLabel: "Curated Editions",
+        keyTopics: "Key Topics Covered:",
+        items: [
+          {
+            id: "issue-04",
+            number: "Issue #04",
+            title: "Demystifying 3D on the Web: Real-World React Three Fiber Patterns",
+            date: "Nov 2024",
+            readTime: "5 min read",
+            category: "3D & WebGL",
+            summary: "A complete breakdown of optimizing 3D canvases, limiting DPR on Retina screens, and lazy-loading heavy WebGL assets.",
+            highlights: [
+              "Draco compression pipelines for GLTF models",
+              "Dynamic DPR adjustments based on device FPS",
+              "Blending Canvas shaders with Tailwind CSS overlays",
+            ],
+          },
+          {
+            id: "issue-03",
+            number: "Issue #03",
+            title: "Next.js 15 & React 19: Architecture Patterns That Scale",
+            date: "Oct 2024",
+            readTime: "4 min read",
+            category: "Architecture",
+            summary: "Lessons learned migrating complex production applications to Server Components, Actions, and Turbopack.",
+            highlights: [
+              "Optimizing Core Web Vitals to 99+ on mobile",
+              "Streaming with Suspense vs SSR bottlenecks",
+              "Type-safe Server Actions without boilerplate",
+            ],
+          },
+          {
+            id: "issue-02",
+            number: "Issue #02",
+            title: "Crafting Micro-Interactions That Wow Users (Without Hurting FPS)",
+            date: "Sep 2024",
+            readTime: "6 min read",
+            category: "UI / UX Craft",
+            summary: "How to implement magnetic buttons, elastic spring physics, and cursor-aware elements smoothly.",
+            highlights: [
+              "Hardware-accelerated CSS transforms vs JS layout thrashing",
+              "Framer Motion layoutId magic for animated tabs",
+              "Accessible motion with prefers-reduced-motion",
+            ],
+          },
+          {
+            id: "issue-01",
+            number: "Issue #01",
+            title: "The Top-Rated Freelance Playbook: 44+ Projects & 98% Success",
+            date: "Aug 2024",
+            readTime: "7 min read",
+            category: "Career & Freelance",
+            summary: "Actionable strategies for delivering high-impact frontend client projects, scoping requirements, and maintaining repeat clients.",
+            highlights: [
+              "Pixel-perfect Figma-to-code conversion workflows",
+              "Proactive client communication patterns",
+              "Managing deadlines to achieve 89% on-time delivery",
+            ],
+          },
+        ],
+      },
     },
   },
 };
