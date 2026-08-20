@@ -1,11 +1,10 @@
-import ResumeView from "./resume-view";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Résumé | Ergashev Navruz",
-  description:
-    "Résumé of Ergashev Navruz — Frontend Developer. View online or download the PDF.",
+  description: "Download the résumé of Ergashev Navruz — Frontend Developer.",
 };
 
 export default function ResumePage() {
-  return <ResumeView />;
+  redirect("/resume.pdf");
 }

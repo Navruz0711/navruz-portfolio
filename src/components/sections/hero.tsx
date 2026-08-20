@@ -18,7 +18,13 @@ import SectionWrapper from "../ui/section-wrapper";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const resumePath =
+    language === "ru"
+      ? "/resume-ru.pdf"
+      : language === "en"
+      ? "/resume-en.pdf"
+      : "/resume-uz.pdf";
 
   return (
     <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
@@ -85,17 +91,18 @@ const HeroSection = () => {
               </div>
 
               <div className="mt-6 sm:mt-8 flex flex-col gap-3 w-full sm:w-fit">
-                <Link
-                  href={"/resume"}
-                  className="flex-1"
+                <a
+                  href={resumePath}
+                  download={`Ergashev_Navruz_Resume_${language.toUpperCase()}.pdf`}
+                  className="flex-1 cursor-pointer"
                 >
-                  <BoxReveal delay={2} width="100%" >
-                    <Button className="flex items-center gap-2 w-full">
+                  <BoxReveal delay={2} width="100%">
+                    <Button className="flex items-center gap-2 w-full cursor-pointer">
                       <File size={20} />
                       <p>{t.hero.viewResume}</p>
                     </Button>
                   </BoxReveal>
-                </Link>
+                </a>
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
