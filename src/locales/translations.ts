@@ -133,11 +133,11 @@ export const translations: Record<Language, TranslationSchema> = {
       kworkTitle: "Kwork Platformasi — Rasmiy Reyting & Ko'rsatkichlar",
       stats: {
         status: { label: "Status", value: "Oliy Reyting", sub: "Top sotuvchi (Kwork)" },
-        orders: { label: "Buyurtmalar", value: "43+", sub: "Muvaffaqiyatli bajarilgan" },
-        reviews: { label: "Taqrizlar", value: "31", sub: "100% ijobiy fikrlar" },
+        orders: { label: "Buyurtmalar", value: "44", sub: "Muvaffaqiyatli bajarilgan" },
+        reviews: { label: "Taqrizlar", value: "32", sub: "100% ijobiy fikrlar" },
         success: { label: "Muvaffaqiyat", value: "98%", sub: "Topshirilgan buyurtmalar" },
-        onTime: { label: "Vaqtida", value: "88%", sub: "O'z vaqtida topshirilgan" },
-        repeat: { label: "Doimiy", value: "30%", sub: "Qayta buyurtmalar" },
+        onTime: { label: "Vaqtida", value: "89%", sub: "O'z vaqtida topshirilgan" },
+        repeat: { label: "Doimiy", value: "32%", sub: "Qayta buyurtmalar" },
       },
       items: [
         {
@@ -147,8 +147,8 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Freelance Frontend Developer (Высший рейтинг)",
           company: "Kwork Platformasi",
           description: [
-            "Kwork frilans platformasida «Продавец с высшим рейтингом» darajasi — 43+ ta buyurtma muvaffaqiyatli topshirilgan va 31 ta ijobiy taqriz olingan.",
-            "98% buyurtmalar a'lo darajada topshirilgan, 88% o'z vaqtida topshirilgan, 30% mijozlar qayta buyurtma bergan.",
+            "Kwork frilans platformasida «Продавец с высшим рейтингом» darajasi — 44 ta buyurtma muvaffaqiyatli topshirilgan va 32 ta ijobiy taqriz olingan.",
+            "98% buyurtmalar a'lo darajada topshirilgan, 89% o'z vaqtida topshirilgan, 32% mijozlar qayta buyurtma bergan.",
             "HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS va TypeScript yordamida murakkab va moslashuvchan interfeyslar yaratilgan.",
             "Figma va dizayn maketlarini pikselma-piksel aniqlikda sifatli va toza frontend kodiga aylantirish.",
           ],
@@ -415,11 +415,11 @@ export const translations: Record<Language, TranslationSchema> = {
       kworkTitle: "Платформа Kwork — Официальный рейтинг и показатели",
       stats: {
         status: { label: "Статус", value: "Высший рейтинг", sub: "Топ продавец Kwork" },
-        orders: { label: "Заказы", value: "43+", sub: "Выполнено успешно" },
-        reviews: { label: "Отзывы", value: "31", sub: "100% положительные" },
+        orders: { label: "Заказы", value: "44", sub: "Выполнено успешно" },
+        reviews: { label: "Отзывы", value: "32", sub: "100% положительные" },
         success: { label: "Успешность", value: "98%", sub: "Заказов успешно сдано" },
-        onTime: { label: "Пунктуальность", value: "88%", sub: "Сдано вовремя" },
-        repeat: { label: "Повторные", value: "30%", sub: "Постоянные клиенты" },
+        onTime: { label: "Пунктуальность", value: "89%", sub: "Сдано вовремя" },
+        repeat: { label: "Повторные", value: "32%", sub: "Постоянные клиенты" },
       },
       items: [
         {
@@ -429,8 +429,8 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Freelance Frontend Developer (Высший рейтинг)",
           company: "Платформа Kwork",
           description: [
-            "Продавец с высшим рейтингом на платформе Kwork — 43+ успешно выполненных заказов и 31 положительный отзыв.",
-            "98% заказов успешно сдано, 88% сдано точно в срок, 30% клиентов обращаются повторно.",
+            "Продавец с высшим рейтингом на платформе Kwork — 44 успешно выполненных заказов и 32 положительных отзыва.",
+            "98% заказов успешно сдано, 89% сдано точно в срок, 32% клиентов обращаются повторно.",
             "Разработка сложных и отзывчивых интерфейсов с использованием HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS и TypeScript.",
             "Пиксель-в-пиксель верстка макетов Figma в чистый, масштабируемый frontend код.",
           ],
@@ -697,11 +697,11 @@ export const translations: Record<Language, TranslationSchema> = {
       kworkTitle: "Kwork Platform — Official Rating & Metrics",
       stats: {
         status: { label: "Status", value: "Top Rated", sub: "Top Seller on Kwork" },
-        orders: { label: "Orders", value: "43+", sub: "Successfully completed" },
-        reviews: { label: "Reviews", value: "31", sub: "100% positive feedback" },
+        orders: { label: "Orders", value: "44", sub: "Successfully completed" },
+        reviews: { label: "Reviews", value: "32", sub: "100% positive feedback" },
         success: { label: "Success Rate", value: "98%", sub: "Orders delivered successfully" },
-        onTime: { label: "On-Time", value: "88%", sub: "Delivered on schedule" },
-        repeat: { label: "Repeat", value: "30%", sub: "Returning clients" },
+        onTime: { label: "On-Time", value: "89%", sub: "Delivered on schedule" },
+        repeat: { label: "Repeat", value: "32%", sub: "Returning clients" },
       },
       items: [
         {
@@ -711,8 +711,8 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Freelance Frontend Developer (Top Rated)",
           company: "Kwork Freelance Platform",
           description: [
-            "Top-rated seller on Kwork platform with 43+ completed orders and 31 five-star reviews.",
-            "98% successful order completion rate, 88% on-time delivery, and 30% repeat client rate.",
+            "Top-rated seller on Kwork platform with 44 completed orders and 32 five-star reviews.",
+            "98% successful order completion rate, 89% on-time delivery, and 32% repeat client rate.",
             "Developed complex, responsive web interfaces using HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS, and TypeScript.",
             "Pixel-perfect Figma-to-code conversions with clean, maintainable frontend architecture.",
           ],
