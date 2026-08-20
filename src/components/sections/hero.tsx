@@ -18,7 +18,21 @@ import SectionWrapper from "../ui/section-wrapper";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const resumePdfPath =
+    language === "ru"
+      ? "/resume/Ergashev_Navruz_Resume_RU.pdf"
+      : language === "en"
+      ? "/resume/Ergashev_Navruz_Resume_EN.pdf"
+      : "/resume/Ergashev_Navruz_Resume_UZ.pdf";
+
+  const resumeFileName =
+    language === "ru"
+      ? "Ergashev_Navruz_Resume_RU.pdf"
+      : language === "en"
+      ? "Ergashev_Navruz_Resume_EN.pdf"
+      : "Ergashev_Navruz_Resume_UZ.pdf";
 
   return (
     <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
@@ -86,8 +100,8 @@ const HeroSection = () => {
 
               <div className="mt-6 sm:mt-8 flex flex-col gap-3 w-full sm:w-fit">
                 <a
-                  href="/Ergashev_Navruz_Resume.pdf"
-                  download="Ergashev_Navruz_Resume.pdf"
+                  href={resumePdfPath}
+                  download={resumeFileName}
                   className="flex-1 cursor-pointer"
                 >
                   <BoxReveal delay={2} width="100%">

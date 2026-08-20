@@ -1,10 +1,16 @@
-import { redirect } from "next/navigation";
+"use client";
 
-export const metadata = {
-  title: "Résumé | Ergashev Navruz",
-  description: "Download the résumé of Ergashev Navruz — Frontend Developer.",
-};
+import { useEffect } from "react";
+import { useLanguage } from "@/context/language-context";
 
 export default function ResumePage() {
-  redirect("/Ergashev_Navruz_Resume.pdf");
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    const langCode = (language || "uz").toUpperCase();
+    const pdfPath = `/resume/Ergashev_Navruz_Resume_${langCode}.pdf`;
+    window.location.replace(pdfPath);
+  }, [language]);
+
+  return null;
 }
