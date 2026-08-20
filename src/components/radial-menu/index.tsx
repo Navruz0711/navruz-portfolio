@@ -8,9 +8,9 @@ import { MenuItem, Position } from './types';
 import { SocketContext } from '@/contexts/socketio';
 import { useSounds } from '@/components/realtime/hooks/use-sounds';
 import { RightClickHint } from './right-click-hint';
+import { useLanguage } from '@/context/language-context';
 
-// Define our menu items
-const MENU_ITEMS: MenuItem[] = [
+const DEFAULT_MENU_ITEMS: MenuItem[] = [
   { id: 'love', emoji: '❤️', label: 'Love', color: '#ef4444' },
   { id: 'laugh', emoji: '😂', label: 'Haha', color: '#fbbf24' },
   { id: 'wow', emoji: '😮', label: 'Wow', color: '#3b82f6' },
@@ -27,7 +27,17 @@ const COOLDOWN_THRESHOLD = 0.7; // only trigger cooldown above this intensity
 const INTERACTIVE_SELECTOR = 'a, button, input, textarea, select, [contenteditable], img, video, audio, [data-radix-popper-content-wrapper], [data-radix-popper-content-wrapper] *';
 
 export default function RadialMenu() {
+  const { t } = useLanguage();
   const { socket } = useContext(SocketContext);
+
+  const menuItems: MenuItem[] = [
+    { id: 'love', emoji: '❤️', label: t.radial.items?.love || 'Love', color: '#ef4444' },
+    { id: 'laugh', emoji: '😂', label: t.radial.items?.laugh || 'Haha', color: '#fbbf24' },
+    { id: 'wow', emoji: '😮', label: t.radial.items?.wow || 'Wow', color: '#3b82f6' },
+    { id: 'sad', emoji: '😢', label: t.radial.items?.sad || 'Sad', color: '#60a5fa' },
+    { id: 'angry', emoji: '😡', label: t.radial.items?.angry || 'Angry', color: '#f97316' },
+    { id: 'fire', emoji: '🔥', label: t.radial.items?.fire || 'Lit', color: '#f59e0b' },
+  ];
   const { playConfettiSound, startChargeTone, updateChargeTone, stopChargeTone } = useSounds();
   const [isOpen, setIsOpen] = useState(false);
   const [menuPos, setMenuPos] = useState<Position>({ x: 0, y: 0 });
@@ -126,7 +136,7 @@ export default function RadialMenu() {
       playConfettiSound(int);
       const cx = data.x - window.scrollX;
       const cy = data.y - window.scrollY;
-      const item = MENU_ITEMS.find(m => m.emoji === data.emoji);
+      const item = menuItems.find(m => m.emoji === data.emoji) || DEFAULT_MENU_ITEMS.find(m => m.emoji === data.emoji);
       spawnShockwave(cx, cy, item?.color ?? '#fff', data.emoji, int);
     };
 
@@ -135,7 +145,7 @@ export default function RadialMenu() {
     return () => {
       socket.off("confetti-receive", handleConfettiReceive);
     };
-  }, [socket, fireConfetti, spawnShockwave]);
+  }, [socket, fireConfetti, spawnShockwave, menuItems]);
 
   const handleMouseDown = useCallback((e: MouseEvent) => {
     if (e.button === 2) {
@@ -185,7 +195,7 @@ export default function RadialMenu() {
     updateChargeTone(rawIntensity);
 
     const angle = getAngle(origin, currentPos);
-    const count = MENU_ITEMS.length;
+    const count = menuItems.length;
 
     const normalizedAngle = (angle + 90) % 360;
     const positiveAngle = normalizedAngle < 0 ? normalizedAngle + 360 : normalizedAngle;
@@ -194,7 +204,7 @@ export default function RadialMenu() {
     if (activeIndexRef.current !== index) {
       setActiveIndex(index);
     }
-  }, [updateChargeTone]);
+  }, [updateChargeTone, menuItems.length]);
 
   const handleMouseUp = useCallback((e: MouseEvent) => {
     if (timerRef.current) {
@@ -206,7 +216,7 @@ export default function RadialMenu() {
 
     if (isOpenRef.current) {
       if (activeIndexRef.current !== null && !isDisabledRef.current) {
-        const item = MENU_ITEMS[activeIndexRef.current];
+        const item = menuItems[activeIndexRef.current];
         const int = intensityRef.current;
         triggerConfetti(e.pageX, e.pageY, item, int);
 
@@ -263,7 +273,7 @@ export default function RadialMenu() {
         isOpen={isOpen}
         disabled={isDisabled}
         position={menuPos}
-        items={MENU_ITEMS}
+        items={menuItems}
         activeIndex={activeIndex}
         intensityRef={intensityRef}
         cooldownEndRef={cooldownEndRef}

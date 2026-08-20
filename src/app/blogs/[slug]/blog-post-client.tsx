@@ -9,6 +9,7 @@ import RevealAnimation from "@/components/reveal-animations";
 import { useLanguage } from "@/context/language-context";
 
 interface BlogPostClientProps {
+  slug: string;
   post: {
     metadata: {
       title: string;
@@ -23,7 +24,7 @@ interface BlogPostClientProps {
   children: React.ReactNode;
 }
 
-export default function BlogPostClient({ post, readTime, children }: BlogPostClientProps) {
+export default function BlogPostClient({ slug, post, readTime, children }: BlogPostClientProps) {
   const { t, language } = useLanguage();
 
   const formatDate = (dateStr: string) => {
@@ -36,6 +37,8 @@ export default function BlogPostClient({ post, readTime, children }: BlogPostCli
       year: "numeric",
     });
   };
+
+  const title = t.blog.posts?.[slug]?.title || post.metadata.title;
 
   return (
     <div className="min-h-screen relative font-sans">
@@ -76,7 +79,7 @@ export default function BlogPostClient({ post, readTime, children }: BlogPostCli
 
             {/* Title */}
             <h1 className="font-display text-2xl md:text-4xl leading-[1.1] tracking-tight mb-8">
-              {post.metadata.title}
+              {title}
             </h1>
 
             {/* Meta row */}

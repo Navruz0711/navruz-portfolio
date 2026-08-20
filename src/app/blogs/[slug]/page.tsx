@@ -108,7 +108,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const readTime = estimateReadTime(post.content);
 
   return (
-    <BlogPostClient post={post} readTime={readTime}>
+    <BlogPostClient slug={slug} post={post} readTime={readTime}>
       <MDXRemote source={post.content} components={components} />
     </BlogPostClient>
   );

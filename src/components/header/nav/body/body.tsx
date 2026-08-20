@@ -36,6 +36,7 @@ export default function Body({
     if (href === "/#experience") return t.nav.experience;
     if (href === "/#projects") return t.nav.projects;
     if (href === "/blogs") return t.nav.blogs;
+    if (href === "/news" || href === "/newsletter") return t.footer.newsletter;
     if (href === "/#contact") return t.nav.contact;
     if (href === "/resume") return t.nav.resume;
     return title;

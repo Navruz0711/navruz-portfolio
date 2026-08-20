@@ -39,6 +39,9 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
   const featured = posts[0];
   const rest = posts.slice(1);
 
+  const getPostTitle = (post: Post) => t.blog.posts?.[post.slug]?.title || post.metadata.title;
+  const getPostSummary = (post: Post) => t.blog.posts?.[post.slug]?.summary || post.metadata.summary;
+
   return (
     <div className="min-h-screen font-sans">
       {/* Decorative background */}
@@ -122,11 +125,11 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
                   </div>
 
                   <h2 className="font-display text-2xl md:text-3xl leading-[1.15] mb-4 group-hover:text-[hsl(20,100%,70%)] transition-colors duration-300">
-                    {featured.metadata.title}
+                    {getPostTitle(featured)}
                   </h2>
 
                   <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mb-8 font-sans">
-                    {featured.metadata.summary}
+                    {getPostSummary(featured)}
                   </p>
 
                   <div className="flex items-center justify-between">
@@ -190,11 +193,11 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
                   </div>
 
                   <h3 className="font-display text-lg md:text-xl leading-tight mb-3 group-hover:text-[hsl(20,100%,70%)] transition-colors duration-300">
-                    {post.metadata.title}
+                    {getPostTitle(post)}
                   </h3>
 
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-2 font-sans">
-                    {post.metadata.summary}
+                    {getPostSummary(post)}
                   </p>
 
                   <div className="flex items-center justify-between mt-auto">

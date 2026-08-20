@@ -1,9 +1,14 @@
+"use client";
+
 import styles from './style.module.scss';
 import { translate } from '../../anim';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/language-context';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.footer}>
       <ul>
@@ -14,8 +19,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          {/* space */}
-          <span>Inspired by:</span> Studio Lumio
+          <span>{t.navFooter.inspiredBy}:</span> Studio Lumio
         </motion.li>
       </ul>
       <ul>
@@ -26,7 +30,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Typography:</span> Inter
+          <span>{t.navFooter.typography}:</span> Inter
         </motion.li>
       </ul>
       <ul>
@@ -37,7 +41,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Images:</span> Unsplash
+          <span>{t.navFooter.images}:</span> Unsplash
         </motion.li>
       </ul>
       <ul>
@@ -49,7 +53,7 @@ export default function Footer() {
           exit="exit"
         >
           <Link href="/blogs" className="hover:text-primary transition-colors cursor-pointer">
-            Blog
+            {t.footer.blog}
           </Link>
         </motion.li>
         <motion.li
@@ -60,7 +64,7 @@ export default function Footer() {
           exit="exit"
         >
           <Link href="/news" className="hover:text-primary transition-colors cursor-pointer">
-            Newsletter
+            {t.footer.newsletter}
           </Link>
         </motion.li>
       </ul>

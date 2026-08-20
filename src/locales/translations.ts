@@ -90,6 +90,30 @@ export interface TranslationSchema {
   };
   radial: {
     hint: string;
+    items: {
+      love: string;
+      laugh: string;
+      wow: string;
+      sad: string;
+      angry: string;
+      fire: string;
+    };
+  };
+  motion: {
+    reduce: string;
+    enable: string;
+    ariaReduce: string;
+    ariaEnable: string;
+    nudgeTitle: string;
+    nudgeDesc: string;
+    enable3d: string;
+    noThanks: string;
+    dismiss: string;
+  };
+  navFooter: {
+    inspiredBy: string;
+    typography: string;
+    images: string;
   };
   footer: {
     rights: string;
@@ -113,6 +137,7 @@ export interface TranslationSchema {
     backToAll: string;
     publishedOn: string;
     author: string;
+    posts: Record<string, { title: string; summary: string }>;
     newsletterBanner: {
       badge: string;
       title: string;
@@ -442,6 +467,30 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     radial: {
       hint: "Reaksiya qoldirish uchun sichqonchaning o'ng tugmasini bosing",
+      items: {
+        love: "Sevgi",
+        laugh: "Kulgi",
+        wow: "Qoyil",
+        sad: "G'amgin",
+        angry: "Jahldor",
+        fire: "Olov",
+      },
+    },
+    motion: {
+      reduce: "Harakatni kamaytirish",
+      enable: "Harakatni yoqish",
+      ariaReduce: "Harakatni kamaytirish va 3D ni o'chirish",
+      ariaEnable: "Harakat va 3D ni yoqish",
+      nudgeTitle: "Tejamkor rejim yoqilgan",
+      nudgeDesc: "Interaktiv 3D sahna va animatsiyalar o'chirilgan. To'liq vizual tajribani xohlaysizmi?",
+      enable3d: "3D ni yoqish",
+      noThanks: "Yo'q, rahmat",
+      dismiss: "Yopish",
+    },
+    navFooter: {
+      inspiredBy: "Ilhom manbai",
+      typography: "Tipografika",
+      images: "Rasmlar",
     },
     footer: {
       rights: "Barcha huquqlar himoyalangan.",
@@ -465,6 +514,24 @@ export const translations: Record<Language, TranslationSchema> = {
       backToAll: "Barcha maqolalarga qaytish",
       publishedOn: "Chop etilgan sana",
       author: "Muallif",
+      posts: {
+        "building-modern-interactive-3d-portfolios": {
+          title: "React Three Fiber va Next.js yordamida yuqori unumdorlikka ega 3D portfoliolar yaratish",
+          summary: "60 FPS 3D canvas renderlash, shader optimizatsiyasi va zamonaviy veb estetikasiga chuqur nazar.",
+        },
+        "mastering-modern-frontend-architecture": {
+          title: "Zamonaviy Frontend Arxitekturasi: Monolitlardan mikro-interaksiyalargacha",
+          summary: "Modulli UI dizayn tizimlari, TypeScript qat'iyligi va silliq animatsiyalar tijoriy veb ilovalarni qanday yuksaltirishi haqida.",
+        },
+        "freelance-engineering-insights": {
+          title: "Oliy reytingli frilanser sifatida 40 dan ortiq loyihalarni topshirishdan olingan xulosalar",
+          summary: "Mijozlar bilan muloqot, pikselma-piksel dizayn topshirish va 98% lik reytingni saqlab qolish bo'yicha amaliy strategiyalar.",
+        },
+        "achieving-milestone": {
+          title: "Katta Qadam: Portfolioga Blog Bo'limining Qo'shilishi",
+          summary: "Portfolioga blog bo'limini qo'shish jarayoni va rejalashtirilgan yangi maqolalar haqida.",
+        },
+      },
       newsletterBanner: {
         badge: "✉ Aloqada qoling",
         title: "Frontend Yangiliklariga Obuna Bo'ling",
@@ -850,6 +917,30 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     radial: {
       hint: "Кликните правой кнопкой мыши для реакции",
+      items: {
+        love: "Любовь",
+        laugh: "Хаха",
+        wow: "Вау",
+        sad: "Грустно",
+        angry: "Злость",
+        fire: "Огонь",
+      },
+    },
+    motion: {
+      reduce: "Уменьшить движение",
+      enable: "Включить движение",
+      ariaReduce: "Уменьшить движение и выключить 3D",
+      ariaEnable: "Включить движение и 3D",
+      nudgeTitle: "Включен режим экономии",
+      nudgeDesc: "Интерактивная 3D сцена и анимации отключены. Хотите включить полный визуальный опыт?",
+      enable3d: "Включить 3D",
+      noThanks: "Нет, спасибо",
+      dismiss: "Закрыть",
+    },
+    navFooter: {
+      inspiredBy: "Вдохновлено",
+      typography: "Типографика",
+      images: "Изображения",
     },
     footer: {
       rights: "Все права защищены.",
@@ -873,6 +964,24 @@ export const translations: Record<Language, TranslationSchema> = {
       backToAll: "Назад ко всем статьям",
       publishedOn: "Дата публикации",
       author: "Автор",
+      posts: {
+        "building-modern-interactive-3d-portfolios": {
+          title: "Создание высокопроизводительных 3D портфолио с React Three Fiber и Next.js",
+          summary: "Глубокий разбор рендеринга 3D canvas при 60 FPS, оптимизация шейдеров и современная веб-эстетика.",
+        },
+        "mastering-modern-frontend-architecture": {
+          title: "Современная Frontend Архитектура: От монолитов к микро-взаимодействиям",
+          summary: "Как модульные дизайн-системы, строгий TypeScript и плавная анимация выводят коммерческие веб-приложения на новый уровень.",
+        },
+        "freelance-engineering-insights": {
+          title: "Уроки сдачи более 40 коммерческих проектов в статусе продавца с высшим рейтингом",
+          summary: "Практические стратегии общения с заказчиками, пиксель-в-пиксель верстки и удержания рейтинга успеха на уровне 98%.",
+        },
+        "achieving-milestone": {
+          title: "Важная веха: Добавление раздела блога в портфолио",
+          summary: "Заметки о процессе создания блога в портфолио и планах на будущие технические статьи.",
+        },
+      },
       newsletterBanner: {
         badge: "✉ Будьте в курсе",
         title: "Подпишитесь на Frontend рассылку",
@@ -1258,6 +1367,30 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     radial: {
       hint: "Right-click anywhere to react",
+      items: {
+        love: "Love",
+        laugh: "Haha",
+        wow: "Wow",
+        sad: "Sad",
+        angry: "Angry",
+        fire: "Lit",
+      },
+    },
+    motion: {
+      reduce: "Reduce motion",
+      enable: "Enable motion",
+      ariaReduce: "Reduce motion and disable 3D",
+      ariaEnable: "Enable motion and 3D",
+      nudgeTitle: "Reduced motion is on",
+      nudgeDesc: "The interactive 3D scene and animations are turned off. Want the full experience?",
+      enable3d: "Enable 3D",
+      noThanks: "No thanks",
+      dismiss: "Dismiss",
+    },
+    navFooter: {
+      inspiredBy: "Inspired by",
+      typography: "Typography",
+      images: "Images",
     },
     footer: {
       rights: "All rights reserved.",
@@ -1281,6 +1414,24 @@ export const translations: Record<Language, TranslationSchema> = {
       backToAll: "Back to all posts",
       publishedOn: "Published on",
       author: "Author",
+      posts: {
+        "building-modern-interactive-3d-portfolios": {
+          title: "Building High-Performance 3D Portfolios with React Three Fiber & Next.js",
+          summary: "A deep dive into 60 FPS 3D canvas rendering, shader optimizations, and modern web aesthetics.",
+        },
+        "mastering-modern-frontend-architecture": {
+          title: "Modern Frontend Architecture: From Monoliths to Micro-Interactions",
+          summary: "How modular UI design systems, TypeScript strictness, and fluid animations elevate commercial web apps.",
+        },
+        "freelance-engineering-insights": {
+          title: "Lessons from Delivering 40+ Production Web Projects as a Top-Rated Freelancer",
+          summary: "Actionable strategies on client communication, delivering pixel-perfect designs, and maintaining a 98% success score.",
+        },
+        "achieving-milestone": {
+          title: "Achieving Milestone: Adding Blogs Section",
+          summary: "A milestone update on adding an engineering blog section to the interactive 3D portfolio.",
+        },
+      },
       newsletterBanner: {
         badge: "✉ Stay in the loop",
         title: "Subscribe to the Frontend Dispatch",

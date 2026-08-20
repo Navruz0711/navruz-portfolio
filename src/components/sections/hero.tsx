@@ -61,7 +61,7 @@ const HeroSection = () => {
                       side="top"
                       className="dark:bg-white dark:text-black"
                     >
-                      Ergashev Navruz — Frontend Developer
+                      {config.author} — {t.hero.role}
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
