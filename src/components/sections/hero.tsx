@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiTelegram, SiX } from "react-icons/si";
 import { useLanguage } from "@/context/language-context";
 import { config } from "@/data/config";
 import SectionWrapper from "../ui/section-wrapper";
@@ -138,6 +138,19 @@ const HeroSection = () => {
                       >
                         <Button variant={"outline"}>
                           <SiGithub size={24} />
+                        </Button>
+                      </Link>
+                    )}
+                    {config.social.telegram && (
+                      <Link
+                        href={config.social.telegram}
+                        target="_blank"
+                        className="cursor-can-hover"
+                        rel="noopener noreferrer"
+                        aria-label="Telegram (@Ergashev_Nz)"
+                      >
+                        <Button variant={"outline"} className="hover:text-[#229ED9]">
+                          <SiTelegram size={24} />
                         </Button>
                       </Link>
                     )}

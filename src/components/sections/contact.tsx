@@ -12,6 +12,8 @@ import { config } from "@/data/config";
 import { SectionHeader } from "./section-header";
 import SectionWrapper from "../ui/section-wrapper";
 
+import { SiTelegram } from "react-icons/si";
+import { Mail } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
 const ContactSection = () => {
@@ -25,16 +27,32 @@ const ContactSection = () => {
           <CardHeader className="px-4 sm:px-6">
             <CardTitle className="text-2xl sm:text-4xl">{t.contact.title}</CardTitle>
             <CardDescription className="text-xs sm:text-sm">
-              {t.contact.subtitle} (
-              <a
-                target="_blank"
-                href={`mailto:${config.email}`}
-                className="text-primary hover:underline font-medium cursor-can-hover break-all"
-              >
-                {config.email}
-              </a>
-              )
+              {t.contact.subtitle}
             </CardDescription>
+            <div className="flex flex-wrap items-center gap-2.5 pt-2">
+              {config.social.telegram && (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={config.social.telegram}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-sky-500/30 bg-sky-500/10 hover:bg-sky-500/20 text-sky-600 dark:text-sky-400 text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-[1.02] cursor-can-hover shadow-sm group"
+                >
+                  <SiTelegram className="w-4 h-4 text-[#229ED9] group-hover:scale-110 transition-transform duration-300" />
+                  <span>@Ergashev_Nz</span>
+                </a>
+              )}
+              {config.email && (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`mailto:${config.email}`}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-border/80 bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-[1.02] cursor-can-hover"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>{config.email}</span>
+                </a>
+              )}
+            </div>
           </CardHeader>
           <CardContent className="px-4 sm:px-6">
             <ContactForm />

@@ -3,7 +3,7 @@
 import { useInView } from "motion/react";
 import React, { useRef } from "react";
 import { Button } from "../ui/button";
-import { SiGithub, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiInstagram, SiLinkedin, SiTelegram, SiX } from "react-icons/si";
 import { config } from "@/data/config";
 import Link from "next/link";
 
@@ -12,6 +12,11 @@ const BUTTONS = [
     name: "Github",
     href: config.social.github,
     icon: <SiGithub size={"24"} className="text-foreground" />,
+  },
+  {
+    name: "Telegram",
+    href: config.social.telegram,
+    icon: <SiTelegram size={"24"} className="text-[#229ED9]" />,
   },
   {
     name: "LinkedIn",

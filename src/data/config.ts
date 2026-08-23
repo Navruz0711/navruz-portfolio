@@ -37,6 +37,7 @@ const config = {
     instagram: "",
     facebook: "",
     github: "https://github.com/Navruz0711",
+    telegram: "https://t.me/Ergashev_Nz",
   },
 };
 export { config };
