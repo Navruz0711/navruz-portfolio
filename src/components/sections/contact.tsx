@@ -12,9 +12,11 @@ import { config } from "@/data/config";
 import { SectionHeader } from "./section-header";
 import SectionWrapper from "../ui/section-wrapper";
 
+import { Button } from "../ui/button";
 import { SiTelegram } from "react-icons/si";
 import { Mail } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
+import Link from "next/link";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -31,26 +33,38 @@ const ContactSection = () => {
             </CardDescription>
             <div className="flex flex-wrap items-center gap-2.5 pt-2">
               {config.social.telegram && (
-                <a
+                <Link
                   target="_blank"
                   rel="noopener noreferrer"
                   href={config.social.telegram}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-sky-500/30 bg-sky-500/10 hover:bg-sky-500/20 text-sky-600 dark:text-sky-400 text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-[1.02] cursor-can-hover shadow-sm group"
+                  className="cursor-can-hover"
+                  aria-label="Telegram (@Ergashev_Nz)"
                 >
-                  <SiTelegram className="w-4 h-4 text-[#229ED9] group-hover:scale-110 transition-transform duration-300" />
-                  <span>@Ergashev_Nz</span>
-                </a>
+                  <Button
+                    variant="outline"
+                    className="gap-2 hover:text-[#229ED9] transition-colors"
+                  >
+                    <SiTelegram size={18} />
+                    <span>@Ergashev_Nz</span>
+                  </Button>
+                </Link>
               )}
               {config.email && (
-                <a
+                <Link
                   target="_blank"
                   rel="noopener noreferrer"
                   href={`mailto:${config.email}`}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-border/80 bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-[1.02] cursor-can-hover"
+                  className="cursor-can-hover"
+                  aria-label={`Email (${config.email})`}
                 >
-                  <Mail className="w-4 h-4" />
-                  <span>{config.email}</span>
-                </a>
+                  <Button
+                    variant="outline"
+                    className="gap-2 transition-colors"
+                  >
+                    <Mail size={18} />
+                    <span>{config.email}</span>
+                  </Button>
+                </Link>
               )}
             </div>
           </CardHeader>

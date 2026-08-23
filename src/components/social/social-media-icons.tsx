@@ -16,7 +16,7 @@ const BUTTONS = [
   {
     name: "Telegram",
     href: config.social.telegram,
-    icon: <SiTelegram size={"24"} className="text-[#229ED9]" />,
+    icon: <SiTelegram size={"24"} className="text-foreground" />,
   },
   {
     name: "LinkedIn",
