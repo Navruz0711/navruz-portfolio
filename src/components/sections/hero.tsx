@@ -59,6 +59,7 @@ const HeroSection = () => {
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
                       <h1
+                        aria-label={`${config.author} - Frontend Developer & UI/UX Engineer`}
                         className={cn(
                           "-ml-[2px] sm:-ml-[6px] leading-none text-transparent text-slate-800 text-left",
                           "font-bold text-[2.75rem] sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl",

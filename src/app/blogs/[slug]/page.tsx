@@ -1,8 +1,11 @@
 import React from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBlogPost, getBlogPosts } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import BlogPostClient from "./blog-post-client";
+import { config } from "@/data/config";
+import { BlogPostJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -11,20 +14,61 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) {
     return {
-      title: "Post Not Found | Navruz Portfolio",
+      title: "Post Not Found",
       description: "Blog post not found",
     };
   }
+
+  const postUrl = `${config.site}/blogs/${slug}`;
+  const postImage = post.metadata.image || config.ogImg;
+
   return {
-    title: `${post.metadata.title} | Navruz Portfolio`,
+    title: post.metadata.title,
     description: post.metadata.summary,
+    authors: [{ name: post.metadata.author || config.author }],
+    keywords: post.metadata.tags || config.keywords,
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      type: "article",
+      title: post.metadata.title,
+      description: post.metadata.summary,
+      url: postUrl,
+      siteName: config.siteName,
+      publishedTime: post.metadata.publishedAt,
+      modifiedTime: post.metadata.publishedAt,
+      authors: [post.metadata.author || config.author],
+      tags: post.metadata.tags || [],
+      images: [
+        {
+          url: postImage,
+          width: 1200,
+          height: 630,
+          alt: post.metadata.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metadata.title,
+      description: post.metadata.summary,
+      images: [postImage],
+      site: config.social.twitterHandle || undefined,
+      creator: config.social.twitterHandle || undefined,
+    },
   };
 }
+
 
 function estimateReadTime(content: string) {
   const words = content.trim().split(/\s+/).length;
@@ -108,8 +152,26 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const readTime = estimateReadTime(post.content);
 
   return (
-    <BlogPostClient slug={slug} post={post} readTime={readTime}>
-      <MDXRemote source={post.content} components={components} />
-    </BlogPostClient>
+    <>
+      <BlogPostJsonLd
+        title={post.metadata.title}
+        summary={post.metadata.summary}
+        publishedAt={post.metadata.publishedAt}
+        slug={slug}
+        image={post.metadata.image}
+        tags={post.metadata.tags}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blogs" },
+          { name: post.metadata.title, url: `/blogs/${slug}` },
+        ]}
+      />
+      <BlogPostClient slug={slug} post={post} readTime={readTime}>
+        <MDXRemote source={post.content} components={components} />
+      </BlogPostClient>
+    </>
   );
 }
+
