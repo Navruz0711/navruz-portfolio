@@ -233,11 +233,11 @@ export const translations: Record<Language, TranslationSchema> = {
       kworkTitle: "Kwork Platformasi — Rasmiy Reyting & Ko'rsatkichlar",
       stats: {
         status: { label: "Status", value: "Oliy Reyting", sub: "Top sotuvchi (Kwork)" },
-        orders: { label: "Buyurtmalar", value: "45", sub: "Muvaffaqiyatli bajarilgan" },
-        reviews: { label: "Taqrizlar", value: "33", sub: "100% ijobiy fikrlar" },
+        orders: { label: "Buyurtmalar", value: "47", sub: "Muvaffaqiyatli bajarilgan" },
+        reviews: { label: "Taqrizlar", value: "35", sub: "100% ijobiy fikrlar" },
         success: { label: "Muvaffaqiyat", value: "98%", sub: "Topshirilgan buyurtmalar" },
         onTime: { label: "Vaqtida", value: "87%", sub: "O'z vaqtida topshirilgan" },
-        repeat: { label: "Doimiy", value: "33%", sub: "Qayta buyurtmalar" },
+        repeat: { label: "Doimiy", value: "36%", sub: "Qayta buyurtmalar" },
       },
       items: [
         {
@@ -247,8 +247,8 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Freelance Frontend Developer (Высший рейтинг)",
           company: "Kwork Platformasi",
           description: [
-            "Kwork frilans platformasida «Продавец с высшим рейтингом» darajasi — 45 ta buyurtma muvaffaqiyatli topshirilgan va 33 ta ijobiy taqriz olingan.",
-            "98% buyurtmalar a'lo darajada topshirilgan, 87% o'z vaqtida topshirilgan, 33% mijozlar qayta buyurtma bergan.",
+            "Kwork frilans platformasida «Продавец с высшим рейтингом» darajasi — 47 ta buyurtma muvaffaqiyatli topshirilgan va 35 ta ijobiy taqriz olingan.",
+            "98% buyurtmalar a'lo darajada topshirilgan, 87% o'z vaqtida topshirilgan, 36% mijozlar qayta buyurtma bergan.",
             "HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS va TypeScript yordamida murakkab va moslashuvchan interfeyslar yaratilgan.",
             "Figma va dizayn maketlarini pikselma-piksel aniqlikda sifatli va toza frontend kodiga aylantirish.",
           ],
@@ -538,7 +538,7 @@ export const translations: Record<Language, TranslationSchema> = {
           summary: "Modulli UI dizayn tizimlari, TypeScript qat'iyligi va silliq animatsiyalar tijoriy veb ilovalarni qanday yuksaltirishi haqida.",
         },
         "freelance-engineering-insights": {
-          title: "Oliy reytingli frilanser sifatida 45 dan ortiq loyihalarni topshirishdan olingan xulosalar",
+          title: "Oliy reytingli frilanser sifatida 47 dan ortiq loyihalarni topshirishdan olingan xulosalar",
           summary: "Mijozlar bilan muloqot, pikselma-piksel dizayn topshirish va 98% lik reytingni saqlab qolish bo'yicha amaliy strategiyalar.",
         },
         "achieving-milestone": {
@@ -588,7 +588,7 @@ export const translations: Record<Language, TranslationSchema> = {
           },
           {
             title: "Frilans & Ishlab Chiqish",
-            description: "45 dan ortiq tijoriy loyihalar asosidagi real keyslar, mijozlar bilan ishlash va natijaga erishish sirlari.",
+            description: "47 dan ortiq tijoriy loyihalar asosidagi real keyslar, mijozlar bilan ishlash va natijaga erishish sirlari.",
           },
         ],
       },
@@ -643,7 +643,7 @@ export const translations: Record<Language, TranslationSchema> = {
           {
             id: "issue-01",
             number: "01-Nashr",
-            title: "Oliy Reytingli Frilanser Qo'llanmasi: 45+ Buyurtma va 98% Natija",
+            title: "Oliy Reytingli Frilanser Qo'llanmasi: 47+ Buyurtma va 98% Natija",
             date: "Avgust 2024",
             readTime: "7 daqiqa",
             category: "Karyera & Frilans",
@@ -690,11 +690,11 @@ export const translations: Record<Language, TranslationSchema> = {
       kworkTitle: "Платформа Kwork — Официальный рейтинг и показатели",
       stats: {
         status: { label: "Статус", value: "Высший рейтинг", sub: "Топ продавец Kwork" },
-        orders: { label: "Заказы", value: "45", sub: "Выполнено успешно" },
-        reviews: { label: "Отзывы", value: "33", sub: "100% положительные" },
+        orders: { label: "Заказы", value: "47", sub: "Выполнено успешно" },
+        reviews: { label: "Отзывы", value: "35", sub: "100% положительные" },
         success: { label: "Успешность", value: "98%", sub: "Заказов успешно сдано" },
         onTime: { label: "Пунктуальность", value: "87%", sub: "Сдано вовремя" },
-        repeat: { label: "Повторные", value: "33%", sub: "Постоянные клиенты" },
+        repeat: { label: "Повторные", value: "36%", sub: "Постоянные клиенты" },
       },
       items: [
         {
@@ -704,8 +704,8 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Freelance Frontend Developer (Высший рейтинг)",
           company: "Платформа Kwork",
           description: [
-            "Продавец с высшим рейтингом на платформе Kwork — 45 успешно выполненных заказов и 33 положительных отзыва.",
-            "98% заказов успешно сдано, 87% сдано точно в срок, 33% клиентов обращаются повторно.",
+            "Продавец с высшим рейтингом на платформе Kwork — 47 успешно выполненных заказов и 35 положительных отзыва.",
+            "98% заказов успешно сдано, 87% сдано точно в срок, 36% клиентов обращаются повторно.",
             "Разработка сложных и отзывчивых интерфейсов с использованием HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS и TypeScript.",
             "Пиксель-в-пиксель верстка макетов Figma в чистый, масштабируемый frontend код.",
           ],
@@ -995,7 +995,7 @@ export const translations: Record<Language, TranslationSchema> = {
           summary: "Как модульные дизайн-системы, строгий TypeScript и плавная анимация выводят коммерческие веб-приложения на новый уровень.",
         },
         "freelance-engineering-insights": {
-          title: "Уроки сдачи более 45 коммерческих проектов в статусе продавца с высшим рейтингом",
+          title: "Уроки сдачи более 47 коммерческих проектов в статусе продавца с высшим рейтингом",
           summary: "Практические стратегии общения с заказчиками, пиксель-в-пиксель верстки и удержания рейтинга успеха на уровне 98%.",
         },
         "achieving-milestone": {
@@ -1045,7 +1045,7 @@ export const translations: Record<Language, TranslationSchema> = {
           },
           {
             title: "Фриланс и Производство",
-            description: "Реальные кейсы из более чем 45 коммерческих проектов, работа с клиентами и секреты высокого рейтинга.",
+            description: "Реальные кейсы из более чем 47 коммерческих проектов, работа с клиентами и секреты высокого рейтинга.",
           },
         ],
       },
@@ -1100,7 +1100,7 @@ export const translations: Record<Language, TranslationSchema> = {
           {
             id: "issue-01",
             number: "Выпуск #01",
-            title: "Гайд продавца с высшим рейтингом: 45+ проектов и 98% успеха",
+            title: "Гайд продавца с высшим рейтингом: 47+ проектов и 98% успеха",
             date: "Август 2024",
             readTime: "7 мин",
             category: "Карьера и Фриланс",
@@ -1147,11 +1147,11 @@ export const translations: Record<Language, TranslationSchema> = {
       kworkTitle: "Kwork Platform — Official Rating & Metrics",
       stats: {
         status: { label: "Status", value: "Top Rated", sub: "Top Seller on Kwork" },
-        orders: { label: "Orders", value: "45", sub: "Successfully completed" },
-        reviews: { label: "Reviews", value: "33", sub: "100% positive feedback" },
+        orders: { label: "Orders", value: "47", sub: "Successfully completed" },
+        reviews: { label: "Reviews", value: "35", sub: "100% positive feedback" },
         success: { label: "Success Rate", value: "98%", sub: "Orders delivered successfully" },
         onTime: { label: "On-Time", value: "87%", sub: "Delivered on schedule" },
-        repeat: { label: "Repeat", value: "33%", sub: "Returning clients" },
+        repeat: { label: "Repeat", value: "36%", sub: "Returning clients" },
       },
       items: [
         {
@@ -1161,8 +1161,8 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Freelance Frontend Developer (Top Rated)",
           company: "Kwork Freelance Platform",
           description: [
-            "Top-rated seller on Kwork platform with 45 completed orders and 33 five-star reviews.",
-            "98% successful order completion rate, 87% on-time delivery, and 33% repeat client rate.",
+            "Top-rated seller on Kwork platform with 47 completed orders and 35 five-star reviews.",
+            "98% successful order completion rate, 87% on-time delivery, and 36% repeat client rate.",
             "Developed complex, responsive web interfaces using HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS, and TypeScript.",
             "Pixel-perfect Figma-to-code conversions with clean, maintainable frontend architecture.",
           ],
@@ -1452,7 +1452,7 @@ export const translations: Record<Language, TranslationSchema> = {
           summary: "How modular UI design systems, TypeScript strictness, and fluid animations elevate commercial web apps.",
         },
         "freelance-engineering-insights": {
-          title: "Lessons from Delivering 45+ Production Web Projects as a Top-Rated Freelancer",
+          title: "Lessons from Delivering 47+ Production Web Projects as a Top-Rated Freelancer",
           summary: "Actionable strategies on client communication, delivering pixel-perfect designs, and maintaining a 98% success score.",
         },
         "achieving-milestone": {
@@ -1502,7 +1502,7 @@ export const translations: Record<Language, TranslationSchema> = {
           },
           {
             title: "Freelance & Production",
-            description: "Real-world case studies, client delivery insights, and workflows from over 45+ commercial projects.",
+            description: "Real-world case studies, client delivery insights, and workflows from over 47+ commercial projects.",
           },
         ],
       },
@@ -1557,7 +1557,7 @@ export const translations: Record<Language, TranslationSchema> = {
           {
             id: "issue-01",
             number: "Issue #01",
-            title: "The Top-Rated Freelance Playbook: 45+ Projects & 98% Success",
+            title: "The Top-Rated Freelance Playbook: 47+ Projects & 98% Success",
             date: "Aug 2024",
             readTime: "7 min read",
             category: "Career & Freelance",
