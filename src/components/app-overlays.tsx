@@ -9,6 +9,7 @@ import RadialMenu from "@/components/radial-menu/index";
 import MotionNudge from "@/components/motion-nudge";
 import DomainNotice from "@/components/domain-notice";
 import Analytics from "@/components/analytics";
+import FloatingClientContact from "@/components/floating-client-contact";
 import { usePerfProfile } from "@/hooks/use-perf-profile";
 
 export default function AppOverlays() {
@@ -33,6 +34,7 @@ export default function AppOverlays() {
       {!isResume && !disableDecorative && <ElasticCursor />}
       {isHome && <RadialMenu />}
       {isHome && <MotionNudge />}
+      <FloatingClientContact />
       <DomainNotice />
       <Analytics />
     </>

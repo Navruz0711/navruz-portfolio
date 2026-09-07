@@ -19,7 +19,7 @@ export default function Body({
   links,
   setIsActive,
 }: BodyProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const params = useParams();
   const [currentHref, setCurrentHref] = useState("/");
 
@@ -35,6 +35,7 @@ export default function Body({
     if (href === "/#skills") return t.nav.skills;
     if (href === "/#experience") return t.nav.experience;
     if (href === "/#projects") return t.nav.projects;
+    if (href === "/#services") return language === "ru" ? "Услуги" : language === "en" ? "Services" : "Xizmatlar";
     if (href === "/blogs") return t.nav.blogs;
     if (href === "/news" || href === "/newsletter") return t.footer.newsletter;
     if (href === "/#contact") return t.nav.contact;

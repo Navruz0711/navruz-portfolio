@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { config } from "@/data/config";
 import OnlineUsers from "../realtime/online-users";
 import { GitHubStarsButton } from "../ui/shadcn-io/github-stars-button";
+import { SiTelegram } from "react-icons/si";
 import { useLanguage } from "@/context/language-context";
 
 interface HeaderProps {
@@ -69,6 +70,22 @@ const Header = ({ loader }: HeaderProps) => {
               repo={config.githubRepo}
               className="hidden sm:inline-flex"
             />
+          )}
+          {config.social.telegram && (
+            <Link
+              href={config.social.telegramDirect || config.social.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex"
+            >
+              <Button
+                size="sm"
+                className="gap-1.5 bg-[#229ED9] hover:bg-[#1e8cc0] text-white text-xs h-8 px-3 rounded-full cursor-pointer shadow-sm"
+              >
+                <SiTelegram size={14} />
+                <span>Telegram</span>
+              </Button>
+            </Link>
           )}
           <Button
             variant={"ghost"}

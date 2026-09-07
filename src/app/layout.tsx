@@ -125,8 +125,10 @@ export const metadata: Metadata = {
   category: "technology",
   classification: "Portfolio Website",
   other: {
-    "geo.region": "UZ",
-    "geo.placename": "Tashkent",
+    "geo.region": "UZ-TO",
+    "geo.placename": "Tashkent, Uzbekistan",
+    "geo.position": "41.2995;69.2401",
+    "ICBM": "41.2995, 69.2401",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },

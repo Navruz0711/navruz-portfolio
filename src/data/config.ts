@@ -1,23 +1,35 @@
 const config = {
-  title: "Ergashev Navruz | Frontend Developer & UI/UX Engineer",
+  title: "Ergashev Navruz — Senior Frontend Developer & Veb-Sayt Yaratish | Tashkent",
   siteName: "Ergashev Navruz Portfolio",
   description: {
-    long: "Ergashev Navruz - Creative Frontend Developer and Software Engineer specializing in modern web development, React, Next.js, TypeScript, Tailwind CSS, 3D Web animations (Three.js/Spline), and performant UI/UX design. Based in Tashkent, Uzbekistan.",
+    long: "Ergashev Navruz - Kwork platformasida 100% ijobiy natijali Top-Rated Senior Frontend dasturchi. Zamonaviy 3D veb-saytlar, yuqori konversiyali landing page va murakkab veb-ilovalarni yaratish. Toshkent, O'zbekiston. Buyurtma berish: @Ergashev_Nz",
     short:
-      "Ergashev Navruz - Frontend Developer specializing in React, Next.js, TypeScript, 3D web experiences, and modern UI/UX design.",
-    uz: "Ergashev Navruz - Tajribali Frontend dasturchi. React, Next.js, TypeScript, Tailwind CSS va 3D veb-saytlar yaratish bo'yicha mutaxassis. Toshkent, O'zbekiston.",
-    ru: "Эргашев Навруз - Frontend разработчик и UI/UX специалист. Разработка современных интерактивных сайтов на React, Next.js, TypeScript и 3D веб-технологиях.",
+      "Ergashev Navruz — Senior Frontend Developer, 3D Web & UI/UX mutaxassisi. Toshkentda buyurtma asosida zamonaviy va tezkor veb-saytlar yaratish.",
+    uz: "Ergashev Navruz - Kwork Oliy Reytingli Frontend dasturchi. Sayt yaratish, 3D veb tajribalar, landing page va biznes ilovalari. Toshkent, O'zbekiston. Aloqa: @Ergashev_Nz",
+    ru: "Эргашев Навруз - Senior Frontend разработчик и специалист по созданию сайтов в Ташкенте. Топ-1 фрилансер Kwork (100% 5★). 3D сайты, лендинги, Next.js, React под ключ.",
   },
   keywords: [
-    // Brand & Personal Names
+    // Brand & Personal Names (Barcha qidiruv variantlari)
+    "Navruz",
+    "navruz",
+    "Navro'z",
     "Ergashev Navruz",
     "Navruz Ergashev",
     "Ergashev Navruzbek",
     "Navruzbek Ergashev",
     "Navruz0711",
     "Navruz dasturchi",
+    "Navruz developer",
+    "Navruz frontend",
+    "Navruz veb sayt",
+    "Navruz portfolio",
     "Эргашев Навруз",
     "Навруз Эргашев",
+    "Навруз",
+    "Навруз разработчик",
+    "Навруз программист",
+    "Навруз фрилансер",
+    "expertweb",
     
     // Core Roles & Titles
     "Frontend Developer",
@@ -30,6 +42,7 @@ const config = {
     "Фронтенд разработчик",
     "Frontend dasturchi",
     "Veb dasturchi",
+    "Dasturchi Toshkent",
 
     // Tech Stack & Frameworks
     "React",
@@ -50,17 +63,37 @@ const config = {
     "GraphQL",
     "PWA",
 
-    // Location & Market
-    "Frontend Developer Uzbekistan",
-    "Frontend Developer Tashkent",
-    "Web Developer Tashkent",
-    "Dasturchi Toshkent",
+    // Client Purchase Intent (Uzbek)
+    "Sayt yaratish",
     "Sayt yaratish Toshkent",
     "Sayt ochish O'zbekiston",
-    "Разработчик сайтов Ташкент",
-    "Фронтенд разработчик Узбекистан",
+    "Sayt buyurtma qilish",
+    "Veb sayt yaratish narxi",
+    "Landing page yaratish",
+    "Internet do'kon yaratish",
+    "3D veb sayt yaratish",
+    "Toshkentda sayt yasash",
+    "Professional dasturchi xizmati",
+    "Frontend dasturchi O'zbekiston",
+    "Arzon va sifatli veb sayt",
+    "Vizitka sayt yaratish",
+    "Telegram webapp yaratish",
+    "Sayt zakaz qilish",
 
-    // Intent & Portfolio keywords
+    // Client Purchase Intent (Russian)
+    "Создание сайтов Ташкент",
+    "Разработка сайтов Ташкент",
+    "Заказать сайт в Ташкенте",
+    "Создание сайтов Узбекистан",
+    "Фронтенд разработчик Узбекистан",
+    "Создание лендингов под ключ",
+    "Разработчик сайтов Ташкент",
+    "Заказать 3D сайт",
+    "Разработка интернет-магазина Ташкент",
+    "Создание корпоративного сайта",
+    "Купить сайт Ташкент",
+
+    // Intent & Portfolio keywords (English)
     "Portfolio",
     "Frontend Portfolio",
     "3D Portfolio",
@@ -70,6 +103,8 @@ const config = {
     "Freelance Frontend Developer",
     "Creative Web Design",
     "Modern Web Applications",
+    "Hire React Developer Tashkent",
+    "Hire Next.js Developer Uzbekistan",
   ],
   author: "Ergashev Navruz",
   email: "uznav715@gmail.com",
@@ -105,6 +140,8 @@ const config = {
     facebook: "",
     github: "https://github.com/Navruz0711",
     telegram: "https://t.me/Ergashev_Nz",
+    telegramDirect: "https://t.me/Ergashev_Nz?text=Assalomu%20alaykum%20Navruz!%20Loyiha%20bo'yicha%20maslahat%20olmoqchi%20edim.",
+    kwork: "https://kwork.ru/user/expertweb",
   },
 };
 export { config };

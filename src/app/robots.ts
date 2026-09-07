@@ -17,17 +17,17 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
       {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/"],
-      },
-      {
-        userAgent: "YandexBot",
-        allow: "/",
-        disallow: ["/api/"],
-      },
-      {
-        userAgent: "Bingbot",
+        userAgent: [
+          "Googlebot",
+          "Googlebot-Image",
+          "Googlebot-Mobile",
+          "Bingbot",
+          "YandexBot",
+          "Applebot",
+          "DuckDuckBot",
+          "Slurp",
+          "Baiduspider",
+        ],
         allow: "/",
         disallow: ["/api/"],
       },

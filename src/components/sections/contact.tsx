@@ -31,21 +31,20 @@ const ContactSection = () => {
             <CardDescription className="text-xs sm:text-sm">
               {t.contact.subtitle}
             </CardDescription>
-            <div className="flex flex-wrap items-center gap-2.5 pt-2">
+            <div className="flex flex-wrap items-center gap-2.5 pt-3">
               {config.social.telegram && (
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={config.social.telegram}
+                  href={config.social.telegramDirect || config.social.telegram}
                   className="cursor-can-hover"
                   aria-label="Telegram (@Ergashev_Nz)"
                 >
                   <Button
-                    variant="outline"
-                    className="gap-2 hover:text-[#229ED9] transition-colors"
+                    className="gap-2 bg-[#229ED9] hover:bg-[#1e8cc0] text-white font-semibold shadow-md shadow-sky-500/20 transition-colors cursor-pointer"
                   >
                     <SiTelegram size={18} />
-                    <span>@Ergashev_Nz</span>
+                    <span>Telegramda yozish (15 min javob) ⚡</span>
                   </Button>
                 </Link>
               )}
@@ -53,19 +52,31 @@ const ContactSection = () => {
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={`mailto:${config.email}`}
+                  href={`mailto:${config.email}?subject=Loyiha%20buyurtmasi`}
                   className="cursor-can-hover"
                   aria-label={`Email (${config.email})`}
                 >
                   <Button
                     variant="outline"
-                    className="gap-2 transition-colors"
+                    className="gap-2 transition-colors cursor-pointer"
                   >
                     <Mail size={18} />
                     <span>{config.email}</span>
                   </Button>
                 </Link>
               )}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 pt-3 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
+                ✓ 30 kunlik bepul kafolat
+              </span>
+              <span className="flex items-center gap-1">
+                ✓ Kwork Top-Rated (100% 5★)
+              </span>
+              <span className="flex items-center gap-1">
+                ✓ Bepul konsultatsiya
+              </span>
             </div>
           </CardHeader>
           <CardContent className="px-4 sm:px-6">
