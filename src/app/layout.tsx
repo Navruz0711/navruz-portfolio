@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
     languages: {
-      "en-US": "/?lang=en",
-      "uz-UZ": "/?lang=uz",
       "ru-RU": "/?lang=ru",
+      "uz-UZ": "/?lang=uz",
+      "en-US": "/?lang=en",
       "x-default": "/",
     },
   },
@@ -77,8 +77,8 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
-    locale: "en_US",
-    alternateLocale: ["uz_UZ", "ru_RU"],
+    locale: "ru_RU",
+    alternateLocale: ["uz_UZ", "en_US"],
     type: "profile",
     firstName: "Navruz",
     lastName: "Ergashev",
@@ -141,7 +141,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="ru"
       className={[
         spaceGroteskSans.variable,
         unbounded.variable,

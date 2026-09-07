@@ -7,8 +7,8 @@ import { Globe, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const LANGUAGES: { code: Language; label: string; flag: string }[] = [
-  { code: "uz", label: "O'zbekcha", flag: "🇺🇿" },
   { code: "ru", label: "Русский", flag: "🇷🇺" },
+  { code: "uz", label: "O'zbekcha", flag: "🇺🇿" },
   { code: "en", label: "English", flag: "🇬🇧" },
 ];
 
