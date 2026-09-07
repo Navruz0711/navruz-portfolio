@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const STORAGE_KEY = "portfolio_language";
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>("ru");
+  const [language, setLanguageState] = useState<Language>("uz");
 
   useEffect(() => {
     try {
@@ -22,8 +22,6 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       if (saved && (saved === "uz" || saved === "ru" || saved === "en")) {
         setLanguageState(saved);
         document.documentElement.lang = saved;
-      } else {
-        document.documentElement.lang = "ru";
       }
     } catch {
       // LocalStorage unavailable
@@ -42,7 +40,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
-  const t = translations[language] || translations.ru;
+  const t = translations[language] || translations.uz;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

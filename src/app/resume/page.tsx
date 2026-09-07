@@ -8,7 +8,7 @@ import { config } from "@/data/config";
 
 export default function ResumePage() {
   const { language } = useLanguage();
-  const langCode = (language || "ru").toUpperCase();
+  const langCode = (language || "uz").toUpperCase();
   const pdfPath = `/resume/Ergashev_Navruz_Resume_${langCode}.pdf`;
 
   useEffect(() => {

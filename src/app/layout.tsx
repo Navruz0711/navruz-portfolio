@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
     languages: {
-      "ru-RU": "/?lang=ru",
-      "uz-UZ": "/?lang=uz",
       "en-US": "/?lang=en",
+      "uz-UZ": "/?lang=uz",
+      "ru-RU": "/?lang=ru",
       "x-default": "/",
     },
   },
@@ -77,8 +77,8 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
-    locale: "ru_RU",
-    alternateLocale: ["uz_UZ", "en_US"],
+    locale: "en_US",
+    alternateLocale: ["uz_UZ", "ru_RU"],
     type: "profile",
     firstName: "Navruz",
     lastName: "Ergashev",
@@ -125,10 +125,8 @@ export const metadata: Metadata = {
   category: "technology",
   classification: "Portfolio Website",
   other: {
-    "geo.region": "UZ-TO",
-    "geo.placename": "Tashkent, Uzbekistan",
-    "geo.position": "41.2995;69.2401",
-    "ICBM": "41.2995, 69.2401",
+    "geo.region": "UZ",
+    "geo.placename": "Tashkent",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
@@ -141,7 +139,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="ru"
+      lang="en"
       className={[
         spaceGroteskSans.variable,
         unbounded.variable,
