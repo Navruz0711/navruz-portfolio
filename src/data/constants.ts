@@ -263,8 +263,8 @@ export const EXPERIENCE: Experience[] = [
     title: "Freelance Frontend Developer (Высший рейтинг)",
     company: "Kwork Platform",
     description: [
-      "Kwork frilans platformasida «Продавец с высшим рейтингом» darajasi — 47 ta buyurtma muvaffaqiyatli topshirilgan va 35 ta ijobiy taqriz olingan.",
-      "98% buyurtmalar a'lo darajada topshirilgan, 87% o'z vaqtida topshirilgan, 36% mijozlar qayta buyurtma bergan.",
+      "Kwork frilans platformasida «Продавец с высшим рейтингом» darajasi — 48 ta buyurtma muvaffaqiyatli topshirilgan va 36 ta ijobiy taqriz olingan.",
+      "98% buyurtmalar a'lo darajada topshirilgan, 85% o'z vaqtida topshirilgan, 38% mijozlar qayta buyurtma bergan.",
       "HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS va TypeScript yordamida murakkab va moslashuvchan interfeyslar yaratilgan.",
       "Figma va dizayn maketlarini pikselma-piksel aniqlikda sifatli va toza frontend kodiga aylantirish.",
     ],
